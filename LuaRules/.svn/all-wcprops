@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/1751/games/CT/LuaRules
+END
+draw.lua
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/402/games/CT/LuaRules/draw.lua
+END
+gadgets.lua
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/402/games/CT/LuaRules/gadgets.lua
+END
+actions.lua
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/402/games/CT/LuaRules/actions.lua
+END
+commands.lua
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/402/games/CT/LuaRules/commands.lua
+END
+main.lua
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/402/games/CT/LuaRules/main.lua
+END
+system.lua
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/214/games/CT/LuaRules/system.lua
+END
+callins.lua
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/402/games/CT/LuaRules/callins.lua
+END
+colors.h.lua
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/402/games/CT/LuaRules/colors.h.lua
+END

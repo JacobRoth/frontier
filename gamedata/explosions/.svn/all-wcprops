@@ -1,0 +1,437 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/1753/games/CT/gamedata/explosions
+END
+ct_missile_smokecloud.lua
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/1676/games/CT/gamedata/explosions/ct_missile_smokecloud.lua
+END
+ct_buildlight_blue.lua
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/1746/games/CT/gamedata/explosions/ct_buildlight_blue.lua
+END
+ct_machinegun_big.lua
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1679/games/CT/gamedata/explosions/ct_machinegun_big.lua
+END
+ct_drone_explosion_air.lua
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/1626/games/CT/gamedata/explosions/ct_drone_explosion_air.lua
+END
+ct_mininglaser_red.lua
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/1533/games/CT/gamedata/explosions/ct_mininglaser_red.lua
+END
+ct_impact_cannon_explosive.lua
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/1743/games/CT/gamedata/explosions/ct_impact_cannon_explosive.lua
+END
+ct_drone_binder_tri.lua
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/1638/games/CT/gamedata/explosions/ct_drone_binder_tri.lua
+END
+resdropoff_singleparticle.lua
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/772/games/CT/gamedata/explosions/resdropoff_singleparticle.lua
+END
+ct_impact_flak.lua
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/1585/games/CT/gamedata/explosions/ct_impact_flak.lua
+END
+ct_impact_machinegun.lua
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1576/games/CT/gamedata/explosions/ct_impact_machinegun.lua
+END
+ct_jumpjet_land.lua
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/1652/games/CT/gamedata/explosions/ct_jumpjet_land.lua
+END
+ct_aura_health.lua
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/1671/games/CT/gamedata/explosions/ct_aura_health.lua
+END
+ct_drone_energyshot.lua
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/1673/games/CT/gamedata/explosions/ct_drone_energyshot.lua
+END
+ct_firetrail.lua
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/1589/games/CT/gamedata/explosions/ct_firetrail.lua
+END
+ct_cannon_artillery_side_long_old.lua
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1678/games/CT/gamedata/explosions/ct_cannon_artillery_side_long_old.lua
+END
+ct_impact_rocket.lua
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/1578/games/CT/gamedata/explosions/ct_impact_rocket.lua
+END
+ct_cannon_artillery_side_long.lua
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/1678/games/CT/gamedata/explosions/ct_cannon_artillery_side_long.lua
+END
+ct_impact_meteor.lua
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/1602/games/CT/gamedata/explosions/ct_impact_meteor.lua
+END
+ct_impact_bombs.lua
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/1583/games/CT/gamedata/explosions/ct_impact_bombs.lua
+END
+resmining_red.lua
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1514/games/CT/gamedata/explosions/resmining_red.lua
+END
+ct_meteor_destruction_big.lua
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/1608/games/CT/gamedata/explosions/ct_meteor_destruction_big.lua
+END
+ct_smoke2.lua
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/1533/games/CT/gamedata/explosions/ct_smoke2.lua
+END
+digdig.lua
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/214/games/CT/gamedata/explosions/digdig.lua
+END
+ct_cannon_artillery_old.lua
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/1678/games/CT/gamedata/explosions/ct_cannon_artillery_old.lua
+END
+ct_cannon_narrow_old.lua
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1677/games/CT/gamedata/explosions/ct_cannon_narrow_old.lua
+END
+ct_dirt.lua
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/1666/games/CT/gamedata/explosions/ct_dirt.lua
+END
+ct_cannon_artillery.lua
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/1678/games/CT/gamedata/explosions/ct_cannon_artillery.lua
+END
+ct_cannon_narrow.lua
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/1677/games/CT/gamedata/explosions/ct_cannon_narrow.lua
+END
+ct_impact_artillery.lua
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/1579/games/CT/gamedata/explosions/ct_impact_artillery.lua
+END
+ct_impact_beamshot_blue.lua
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/1581/games/CT/gamedata/explosions/ct_impact_beamshot_blue.lua
+END
+ct_impact_beam_blue.lua
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/1580/games/CT/gamedata/explosions/ct_impact_beam_blue.lua
+END
+ct_mininglaser_green_big.lua
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/1738/games/CT/gamedata/explosions/ct_mininglaser_green_big.lua
+END
+ct_impact_missile_large.lua
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/1587/games/CT/gamedata/explosions/ct_impact_missile_large.lua
+END
+resmining_blue.lua
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/1505/games/CT/gamedata/explosions/resmining_blue.lua
+END
+ct_weldingsparks.lua
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/1591/games/CT/gamedata/explosions/ct_weldingsparks.lua
+END
+ct_machinegun.lua
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1679/games/CT/gamedata/explosions/ct_machinegun.lua
+END
+ct_missiletail_aa_old.lua
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/1674/games/CT/gamedata/explosions/ct_missiletail_aa_old.lua
+END
+ct_impact_beamshot_green_aa.lua
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/1613/games/CT/gamedata/explosions/ct_impact_beamshot_green_aa.lua
+END
+ct_missiletail_aa.lua
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1674/games/CT/gamedata/explosions/ct_missiletail_aa.lua
+END
+ct_buildlight_red.lua
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1555/games/CT/gamedata/explosions/ct_buildlight_red.lua
+END
+ct_aura_heal.lua
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/1671/games/CT/gamedata/explosions/ct_aura_heal.lua
+END
+ct_impact_beam_green.lua
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1582/games/CT/gamedata/explosions/ct_impact_beam_green.lua
+END
+resmining_green.lua
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/1504/games/CT/gamedata/explosions/resmining_green.lua
+END
+ct_machinegun_blue.lua
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/1679/games/CT/gamedata/explosions/ct_machinegun_blue.lua
+END
+ct_binderbeam.lua
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1619/games/CT/gamedata/explosions/ct_binderbeam.lua
+END
+ct_missiletail_big_old.lua
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/1675/games/CT/gamedata/explosions/ct_missiletail_big_old.lua
+END
+ct_cannon_artillery_side_small.lua
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/1533/games/CT/gamedata/explosions/ct_cannon_artillery_side_small.lua
+END
+ct_missiletail_big.lua
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/1675/games/CT/gamedata/explosions/ct_missiletail_big.lua
+END
+ct_impact_beamshot_green_big.lua
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/1582/games/CT/gamedata/explosions/ct_impact_beamshot_green_big.lua
+END
+ct_impact_missile_aa.lua
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1584/games/CT/gamedata/explosions/ct_impact_missile_aa.lua
+END
+ct_cannon_artillery_side_old.lua
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/1678/games/CT/gamedata/explosions/ct_cannon_artillery_side_old.lua
+END
+ct_drone_binder_di.lua
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/1638/games/CT/gamedata/explosions/ct_drone_binder_di.lua
+END
+ct_buildlight_green.lua
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/1555/games/CT/gamedata/explosions/ct_buildlight_green.lua
+END
+ct_cannon_artillery_side.lua
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/1678/games/CT/gamedata/explosions/ct_cannon_artillery_side.lua
+END
+ct_impact_cannon.lua
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/1578/games/CT/gamedata/explosions/ct_impact_cannon.lua
+END
+FACTORY_EXPLOSION.tdf
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1602/games/CT/gamedata/explosions/FACTORY_EXPLOSION.tdf
+END
+ct_meteor_destruction.lua
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/1608/games/CT/gamedata/explosions/ct_meteor_destruction.lua
+END
+ct_smoke.lua
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/1533/games/CT/gamedata/explosions/ct_smoke.lua
+END
+resdropoff.lua
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/676/games/CT/gamedata/explosions/resdropoff.lua
+END
+ct_impact_fighter.lua
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1586/games/CT/gamedata/explosions/ct_impact_fighter.lua
+END
+ct_drone_explosion_ground.lua
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/1626/games/CT/gamedata/explosions/ct_drone_explosion_ground.lua
+END
+ct_cannon_tank_old.lua
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/1663/games/CT/gamedata/explosions/ct_cannon_tank_old.lua
+END
+ct_mininglaser_green.lua
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1688/games/CT/gamedata/explosions/ct_mininglaser_green.lua
+END
+ct_cannon_tank.lua
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/1676/games/CT/gamedata/explosions/ct_cannon_tank.lua
+END
+ct_missiletail_small_old.lua
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/1673/games/CT/gamedata/explosions/ct_missiletail_small_old.lua
+END
+ct_missiletail_small.lua
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1673/games/CT/gamedata/explosions/ct_missiletail_small.lua
+END
+ct_jumpjet.lua
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/1533/games/CT/gamedata/explosions/ct_jumpjet.lua
+END
+ct_mininglaser_blue.lua
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/1753/games/CT/gamedata/explosions/ct_mininglaser_blue.lua
+END
+ct_impact_beamshot_green.lua
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/1582/games/CT/gamedata/explosions/ct_impact_beamshot_green.lua
+END
+ct_drone_explosion_building.lua
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/1626/games/CT/gamedata/explosions/ct_drone_explosion_building.lua
+END
+booms.tdf
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/1593/games/CT/gamedata/explosions/booms.tdf
+END
+ct_missile_smokecloud_old.lua
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/1676/games/CT/gamedata/explosions/ct_missile_smokecloud_old.lua
+END

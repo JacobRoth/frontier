@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/1700/games/CT/LuaRules/configs
+END
+clone_defs.lua
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/1533/games/CT/LuaRules/configs/clone_defs.lua
+END
+script_buttons.lua
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/1662/games/CT/LuaRules/configs/script_buttons.lua
+END
+morph_defs.lua
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/1700/games/CT/LuaRules/configs/morph_defs.lua
+END
+customcmds.h.lua
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/1567/games/CT/LuaRules/configs/customcmds.h.lua
+END
+jump_defs.lua
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/1567/games/CT/LuaRules/configs/jump_defs.lua
+END
