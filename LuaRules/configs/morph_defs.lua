@@ -7,9 +7,9 @@
 --      metal = 0,
 --      energy = 0,
 --      time = 5,
---      texture = 'bprimarycruiserbase.png',			--Button image
---      text = 'Deploy into the Mobile Headquarters',	--Tooltip text
---      name = 'Deploy',								--Text over button
+--      texture = 'bprimarycruiserbase.png',            --Button image
+--      text = 'Deploy into the Mobile Headquarters',   --Tooltip text
+--      name = 'Deploy',                                --Text over button
 --    },
 --  },
 
@@ -33,7 +33,7 @@ local morphDefs = {
       metal = 0,
       energy = 0,
       time = 5,
-	  text = 'Mobilize into the Oda Class Cruiser',
+      text = 'Mobilize into the Oda Class Cruiser',
       name = 'Mobilize',
     },
   },
@@ -46,8 +46,8 @@ local morphDefs = {
       metal = 0,
       energy = 0,
       time = 4,
-	  text = 'Mobilize into the Mobilized Resource Ship',
-      name = 'Mobilize',	  
+      text = 'Mobilize into the Mobilized Resource Ship',
+      name = 'Mobilize',      
     },
   },
  
@@ -57,8 +57,8 @@ local morphDefs = {
       metal = 0,
       energy = 0,
       time = 4,
-	  text = 'Deploy into the Resource Drop Zone',
-      name = 'Deploy',	  
+      text = 'Deploy into the Resource Drop Zone',
+      name = 'Deploy',    
     },
   },
 
@@ -70,8 +70,8 @@ local morphDefs = {
       metal = 0,
       energy = 0,
       time = 5,
-	  text = 'Deploy the Saito Class Cruiser',
-      name = 'Deploy',	  
+      text = 'Deploy the Saito Class Cruiser',
+      name = 'Deploy',    
     },
   },
  
@@ -81,8 +81,8 @@ local morphDefs = {
       metal = 0,
       energy = 0,
       time = 5,
-	  text = 'Mobilize into the Saito Class Cruiser',
-      name = 'Mobilize',	  
+      text = 'Mobilize into the Saito Class Cruiser',
+      name = 'Mobilize',      
     },
   },
 
@@ -94,8 +94,8 @@ local morphDefs = {
       metal = 0,
       energy = 0,
       time = 5,
-	  text = 'Deploy the Mori Class Cruiser',
-      name = 'Deploy',	  
+      text = 'Deploy the Mori Class Cruiser',
+      name = 'Deploy',    
     },
   },
  
@@ -105,8 +105,8 @@ local morphDefs = {
       metal = 0,
       energy = 0,
       time = 5,
-	  text = 'Mobilize into the Mori Class Cruiser',
-      name = 'Mobilize',	  
+      text = 'Mobilize into the Mori Class Cruiser',
+      name = 'Mobilize',      
     },
   },
 
@@ -118,8 +118,8 @@ local morphDefs = {
       metal = 0,
       energy = 0,
       time = 5,
-	  text = 'Deploy the Azai Class Cruiser',
-      name = 'Deploy',	  
+      text = 'Deploy the Azai Class Cruiser',
+      name = 'Deploy',    
     },
   },
  
@@ -129,12 +129,12 @@ local morphDefs = {
       metal = 0,
       energy = 0,
       time = 5,
-	  text = 'Mobilize into the Azai Class Cruiser',
-      name = 'Mobilize',	  
+      text = 'Mobilize into the Azai Class Cruiser',
+      name = 'Mobilize',      
     },
   },
 
------
+--[[
 
   kdroneengineer = {
     {
@@ -142,8 +142,8 @@ local morphDefs = {
       metal = 0,
       energy = 50,
       time = 5,
-	  text = 'Transform into the Drone Mining Tower',
-      name = 'Transform',	  
+      text = 'Transform into the Drone Mining Tower',
+      name = 'Transform',     
     },
   },
  
@@ -153,10 +153,10 @@ local morphDefs = {
       metal = 0,
       energy = 50,
       time = 5,
-	  text = 'Transform into the Drone Builder',
-      name = 'Transform',	  
+      text = 'Transform into the Drone Builder',
+      name = 'Transform',     
     },
-  },
+  },  ]]--
  }
  
  
