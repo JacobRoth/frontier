@@ -19,7 +19,7 @@ local dropoffs = {}     -- [unitID]
 local resources = {}    -- [unitID] frame_last_mined
 local debug = false
 -----config-----
-local miner_name = {"bminer", "kdroneminingtower", "kdronebigminingtower", "kdroneminerflyer"}      --the unit used for mining
+local miner_name =  {}--{"bminer", "kdroneminingtower", "kdronebigminingtower", "kdroneminerflyer"}      --the unit used for mining
 local resource_name = {}--{"bminerals","bmeteorimpact","bmeteorimpact_big"}     --the stuff that gets mined
 local dropoff_name = {"bsupplydepot", "bsupplydepotai", "bprimarycruiserbase", "bprimarycruiserbaseai", "kdroneminingtower","kdronebigminingtower", "kdronemininghub"} --where the miners bring the resources to
 local dropoff_distance = 100 --how near do miners have to get to a dropoff to drop their cargo? (this value is added to unitRadius)
@@ -28,7 +28,6 @@ local resreturneffect = "resdropoff_singleparticle" --ceg effect played at miner
 ----------------
 function gadget:UnitFinished(unitID, unitDefID, teamID)
     --Spring.Echo(unitName (unitID) )
-    Spring.Echo(UnitDefs[unitDefID])
     if (is_miner_type (unitDefID) == true) then 
         Spring.GiveOrderToUnit(unitID, CMD.FIRE_STATE , { 0 }, {}) --hold fire
         add_miner (unitID) 
@@ -101,6 +100,7 @@ end
 function gadget:Initialize()
     make_miner_table()
     make_resource_name_table ()
+    make_miner_name_table ()
     _G.miners = miners;
     _G.dropoffs = dropoffs
     _G.dropoff_distance = dropoff_distance
@@ -144,9 +144,21 @@ if (debug) then Spring.Echo ("tp_mining.lua: looking for mineable unitdefs") end
     end
 end
 
+function make_miner_name_table () 
+    for id,unitDef in pairs(UnitDefs) do
+        local cp = UnitDefs[id].customParams
+        if (cp) then
+            if (cp.is_miner) then
+                local minersname = unitDef.name
+                if (debug) then Spring.Echo ("tp_mining.lua: found miner" .. minersname) end
+                table.insert (miner_name, minersname)
+            end
+        end
+    end
+end
+
 function is_miner_type (unitDefID)
-    --[[
-    if(debug) then Spring.Echo("is_miner_type called!") end
+    --[[if(debug) then Spring.Echo("is_miner_type called!") end
     local def = UnitDefs[unitDefID]
     --Spring.Echo(def)
     local custom = def.customParams
