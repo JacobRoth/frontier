@@ -22,6 +22,11 @@
       corpse              = [[DEAD2]],
       cruiseAlt           = 110,
       reclaimable         = false,
+      
+      customParams = {
+          is_miner=true,   --used by minig: if the unit can mine is_mineable=1 ressources
+          max_cargo=25,    --used by mining: how much metal the unit can carry at once before having to return to a drop off
+        },
     
       explodeAs           = [[SMALL_UNIT]],
       floater             = false,
