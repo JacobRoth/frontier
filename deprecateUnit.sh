@@ -1,3 +1,5 @@
+#don't use this
+
 git mv units/$1.lua unusedUnits/
 #git mv scripts/$1.lua unusedScripts/
 #git mv objects3d/$1.s3o unusedObjects3d/
