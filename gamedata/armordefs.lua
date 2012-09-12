@@ -117,7 +117,7 @@
 
 
             "kdroneengineer",
-            "kdronewarrior",
+            "locustwarrior",
             "klightdrone",
             "kdroneroller",
             "ktridroneroller",
