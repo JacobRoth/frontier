@@ -1,12 +1,6 @@
 
 #!/bin/bash
-
-#find . -name "*.lua" | xargs sed -i 's/$1/$2/g' #replaces text in-file
-
-for infile in `find . -name "*.lua"`
-do
-	echo sed -i 's/$1/$2/g' $infile
-done
+find . -name "*.lua" | perl -pi.bak -e "s/$1/$2/"
 
 for infile in `find . \( ! -regex '.*/\..*' \)`
 do 
