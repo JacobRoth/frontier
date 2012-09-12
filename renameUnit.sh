@@ -1,6 +1,10 @@
 
 #!/bin/bash
-find . -name "*.lua" | perl -pi.bak -e "s/$1/$2/"
+#find . -name "*.lua" | perl -pi.bak -e "s/$1/$2/"
+for file in `find . -name "*.lua"`
+do
+	echo sed -i "s/$1/$2/g" $file
+done
 
 for infile in `find . \( ! -regex '.*/\..*' \)`
 do 
