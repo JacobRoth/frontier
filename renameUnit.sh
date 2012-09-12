@@ -5,7 +5,7 @@
 
 for infile in `find . -name "*.lua"`
 do
-	sed -i 's/$1/$2/g' infile
+	echo sed -i 's/$1/$2/g' $infile
 done
 
 for infile in `find . \( ! -regex '.*/\..*' \)`
@@ -13,6 +13,6 @@ do
 	newname=`echo $infile | sed "s/$1/$2/"`
 	if [ "$infile" != "$newname" ]
 	then 
-		git mv $infile $newname
+		echo git mv $infile $newname
 	fi
 done
