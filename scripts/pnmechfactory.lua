@@ -36,11 +36,11 @@
 
 	function script.StartBuilding()
 		Move(tdoor, z_axis, -150, 100)
-		Move(pod, y_axis, 5000)
+		--Move(pod, y_axis, 5000)
 		Move(pad, y_axis, 5000)
-		WaitForMove(pod, y_axis)
-		Move(pod, y_axis, 0, 1000)
-		WaitForMove(pod, y_axis)
+		--WaitForMove(pod, y_axis)
+		--Move(pod, y_axis, 0, 1000)
+		--WaitForMove(pod, y_axis)
 		Move(tdoor, z_axis, 0, 100)
 		WaitForMove(tdoor, z_axis)
 		Move(pad, y_axis, 0)
@@ -53,7 +53,7 @@
 		Sleep(3000)
 		Move(fdoor, y_axis, 0, 100)
 		WaitForMove(fdoor, y_axis)
-		Show(pod)
+		--Show(pod)
 	end
 
 	function script.Killed(recentDamage, maxHealth)
