@@ -26,7 +26,7 @@
 --------------------------------------------------------------------------------
 
 local opts= {
-	{
+	--[[{
 		key="comm",
 		name="Choose start unit.",
 		desc="Choose the unit every player starts with",
@@ -38,7 +38,7 @@ local opts= {
 			{ key = "bengineer2", name = "Advanced Engineer", desc = "Start with the advanced engineer." },
 			
 		},
-	},
+	},]]
     
 
 }
