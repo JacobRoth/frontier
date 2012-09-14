@@ -9,7 +9,7 @@ unitDef = {
   buildoptions                  = {
     [[kdroneengineer]],
     [[klightdrone]],    
-    [[locustwarrior]],
+    [[lwarrior]],
     [[kdroneroller]],
     [[ktridroneroller]],
   },

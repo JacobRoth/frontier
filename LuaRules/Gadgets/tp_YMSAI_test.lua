@@ -39,7 +39,7 @@ stages = {}
 
 
 
---locustwarrior kgrounddronestructure kdroneengineer kairdronestructure klightdrone
+--lwarrior kgrounddronestructure kdroneengineer kairdronestructure klightdrone
 
 
 
@@ -238,7 +238,7 @@ end
 function canUnitBuildThis (parentName, childName)
 
 
-    if (parentName == childName and (parentName == "locustwarrior" or parentName == "kdroneengineer" or parentName == "kdroneroller" or parentName == "ktridroneroller")) then return true end--these units can clone themselves
+    if (parentName == childName and (parentName == "lwarrior" or parentName == "kdroneengineer" or parentName == "kdroneroller" or parentName == "ktridroneroller")) then return true end--these units can clone themselves
 
     if (parentName == "kdroneengineer" and childName == "kgrounddronestructure") then return true end
 
@@ -254,7 +254,7 @@ function canUnitBuildThis (parentName, childName)
 
         if (childName == "kdroneengineer") then return true end
 
-        if (childName == "locustwarrior") then return true end
+        if (childName == "lwarrior") then return true end
 
         if (childName == "kdroneroller") then return true end
 
@@ -591,7 +591,7 @@ function gadget:GameFrame(frame)
             local unitsWeMakeRaw = ourmetal/costofunit
             local unitsWeMake = round(unitsWeMakeRaw,0)
             for i=1,unitsWeMake do
-                unitWeWillMake = unweighted_choice( {"locustwarrior", "klightdrone", "locustwarrior", "klightdrone","locustwarrior", "klightdrone", "locustwarrior", "klightdrone", "kdiairdrone", "kdiaridrone", "ktriairdrone", "ktriairdrone", "ktriairdrone" } )
+                unitWeWillMake = unweighted_choice( {"lwarrior", "klightdrone", "lwarrior", "klightdrone","lwarrior", "klightdrone", "lwarrior", "klightdrone", "kdiairdrone", "kdiaridrone", "ktriairdrone", "ktriairdrone", "ktriairdrone" } )
                 makeSomeUnits(myTeam[t], {[unitWeWillMake]=1} )
             end
         end]]--
@@ -608,7 +608,7 @@ function gadget:GameFrame(frame)
                     ["kdronemininghub"] = h/8,
                     ["kdroneminerflyer"] = h*3,
                     ["kdroneengineer"]=h/2,
-                    ["locustwarrior"]=h-2,
+                    ["lwarrior"]=h-2,
                     ["kdiairdrone"]=h/2,
                     ["ktriairdrone"]=h/1.5,
                 },

@@ -2,11 +2,11 @@
 local
  sideData = {
   [1] = {
-    name      = 'NKG',
-    startunit = 'bprimarycruiser',
+    name      = 'Masons',
+    startunit = 'mnanoforge',
   },
   [2] = {
-    name      = 'Drone',
+    name      = 'Locusts',
    startunit = 'kdroneengineer',
   },
 }

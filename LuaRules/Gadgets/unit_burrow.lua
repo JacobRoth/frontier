@@ -14,7 +14,7 @@ end
 local Burrowers = {
 	[UnitDefNames.klightdrone.id] = "klightdrone",
 	[UnitDefNames.kdroneengineer.id] = "kdroneengineer",
-	[UnitDefNames.locustwarrior.id] = "locustwarrior",
+	[UnitDefNames.lwarrior.id] = "lwarrior",
 }
 
 local CMD_BURROW = 32630

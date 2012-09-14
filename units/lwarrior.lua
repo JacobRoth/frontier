@@ -1,9 +1,9 @@
-local locustwarrior = {
+local lwarrior = {
     name                = [[Warrior Drone]],
     description         = [[Fires a powerful beam of Anti-Unit plasma. Can Burrow.]],
     acceleration        = 1,
     brakerate           = 0.1,
-    buildpic            = [[locustwarrior.png]],
+    buildpic            = [[lwarrior.png]],
     buildCostEnergy     = 300,
     buildCostMetal      = 300,
     buildTime           = 15,
@@ -35,7 +35,7 @@ local locustwarrior = {
     metalMake           = 0,
     movementClass       = [[kdrone]],
     noChaseCategory     = [[MINERALS FIXEDWING GUNSHIP CRUISER SUB]],
-    objectName          = "locustwarrior.s3o",
+    objectName          = "lwarrior.s3o",
     onoffable           = false,
     seismicSignature    = 4,
     selfDestructAs      = [[DRONE_GROUND_UNIT]],
@@ -60,7 +60,7 @@ local locustwarrior = {
     smoothAnim          = true,
     turnInPlace         = 1,
     turnRate            = 1000,
-    script              = "locustwarrior.lua",
+    script              = "lwarrior.lua",
 
     weapons             = {
     
@@ -133,7 +133,7 @@ local locustwarrior = {
           footprintX       = 3,
           footprintZ       = 3,
           metal            = 150,
-          object           = [[wrecks/locustwarriorwreck.s3o]],
+          object           = [[wrecks/lwarriorwreck.s3o]],
           reclaimable      = true,
           reclaimTime      = 4500,
         },
@@ -158,4 +158,4 @@ local locustwarrior = {
     }
 
 
-return lowerkeys({ ["locustwarrior"] = locustwarrior })
+return lowerkeys({ ["lwarrior"] = lwarrior })

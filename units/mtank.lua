@@ -1,5 +1,5 @@
 	unitDef = {
-	  unitname            = [[bassaulttank]],
+	  unitname            = [[mtank]],
 	  name                = [[Oukami Type Tank]],
 	  description         = [[Light Tank - Inexpensive, basic tank. Fires light shells.]],
 	  acceleration        = 0.5,
@@ -7,7 +7,7 @@
 	  buildCostEnergy     = 225,
 	  buildCostMetal      = 225,
 	  builder             = false,
-	  buildPic            = [[bassaulttank.png]],
+	  buildPic            = [[mtank.png]],
 	  buildTime           = 12,
 	  canAttack           = true,
 	  canGuard            = true,
@@ -32,7 +32,7 @@
 	  moveState           = 0,
 	  noAutoFire          = false,
 	  noChaseCategory     = [[MINERALS FIXEDWING GUNSHIP CRUISER SUB]],
-	  objectName          = [[bassaulttank.s3o]],
+	  objectName          = [[mtank.s3o]],
 	  seismicSignature    = 4,
 	  selfDestructAs      = [[SMALL_UNIT]],
 
@@ -64,7 +64,7 @@
 	  
 	  turnInPlace         = 1,
 	  turnRate            = 500,
-	  script              = [[bassaulttank.lua]],
+	  script              = [[mtank.lua]],
 	
 	  weapons             = {
 	
@@ -132,7 +132,7 @@
 	      footprintX       = 2,
 	      footprintZ       = 2,
 	      metal            = 125,
-	      object           = [[wrecks/bassaulttankwreck.s3o]],
+	      object           = [[wrecks/mtankwreck.s3o]],
 	      reclaimable      = true,
 	      reclaimTime      = 3600,
 	    },
@@ -156,4 +156,4 @@
 	
 	}
 	
-	return lowerkeys({ bassaulttank = unitDef })
+	return lowerkeys({ mtank = unitDef })

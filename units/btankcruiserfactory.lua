@@ -12,7 +12,7 @@ unitDef = {
 	[[bengineer]],
 	[[bminer]],
 	[[bscoutvehicle]],
-	[[bassaulttank]],
+	[[mtank]],
 	[[baabuggy]],
 	[[breztank]],
 	[[bartillery]],

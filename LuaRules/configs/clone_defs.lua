@@ -10,8 +10,8 @@
 			energy = 100,
 		},
 
-		locustwarrior = {
-			into = 'locustwarrior',
+		lwarrior = {
+			into = 'lwarrior',
 			tech = 0,
 			time = 15,
 			metal = 300,

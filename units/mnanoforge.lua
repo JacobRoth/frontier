@@ -1,6 +1,6 @@
 unitDef = {
 
-  unitname                      = [[pnmechfactory]],
+  unitname                      = [[mnanoforge]],
   name                          = [[PN Mech Factory]],
   description                   = [[Mechamakemechs]],
   amphibious                    = false,
@@ -21,7 +21,7 @@ unitDef = {
 
 
 
-  buildPic                      = [[pnmechfactory.png]],
+  buildPic                      = [[mnanoforge.png]],
   buildTime                     = 45,
   canMove                       = true,
   canPatrol                     = true,
@@ -49,7 +49,7 @@ unitDef = {
   metalMake                     = 0,
   minCloakDistance              = 150,
   noAutoFire                    = false,
-  objectName                    = [[pnmechfactory.s3o]],
+  objectName                    = [[mnanoforge.s3o]],
 
   seismicSignature              = 4,
   selfDestructAs                = [[LARGE_BUILDING]],
@@ -69,7 +69,7 @@ unitDef = {
   smoothAnim                    = true,
   workerTime                    = 1,
   yardMap                       = [[cccccccccccccccc cccccccccccccccc cccccccccccccccc cccccccccccccccc cccccccccccccccc cccccccccccccccc cccccccccccccccc cccccccccccccccc cccccccccccccccc cccccccccccccccc cccccccccccccccc cccccccccccccccc cccccccccccccccc cccccccccccccccc cccccccccccccccc cccccccccccccccc]],
-  script                        = [[pnmechfactory.lua]],
+  script                        = [[mnanoforge.lua]],
 
 
 
@@ -86,7 +86,7 @@ unitDef = {
       footprintZ       = 17,
       mass             = 2000,
       metal            = 300,
- --     object           = [[wrecks/pnmechfactorywreck.s3o]],
+ --     object           = [[wrecks/mnanoforgewreck.s3o]],
       reclaimable      = true,
       reclaimTime      = 9000,
     },
@@ -117,4 +117,4 @@ unitDef = {
 
 
 
-return lowerkeys({ pnmechfactory = unitDef })
+return lowerkeys({ mnanoforge = unitDef })

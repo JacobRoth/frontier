@@ -96,7 +96,7 @@
             
             --Tank Cruiser
             "bscoutvehicle",
-            "bassaulttank",
+            "mtank",
             "baabuggy",
             "breztank",
             "bartillery",
@@ -117,7 +117,7 @@
 
 
             "kdroneengineer",
-            "locustwarrior",
+            "lwarrior",
             "klightdrone",
             "kdroneroller",
             "ktridroneroller",
