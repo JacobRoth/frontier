@@ -605,7 +605,7 @@ function gadget:GameFrame(frame)
         if(stages[h+1] == nil) then --generate next stage ondemand
             stages[h+1] = {
                 ["unitNumbers"]={
-                    ["kdronemininghub"] = h/8,
+                    ["kdronemininghub"] = h/12,
                     ["kdroneminerflyer"] = h*3,
                     ["kdroneengineer"]=h/2,
                     ["lwarrior"]=h-2,

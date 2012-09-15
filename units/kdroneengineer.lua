@@ -12,6 +12,7 @@ local kdroneengineer = {
         [[kgrounddronestructure]],
         [[kairdronestructure]],
         [[kdronemininghub]],
+        [[lwarrior]],
     },
 
     buildTime           = 15,
