@@ -6,13 +6,13 @@ local kdroneengineer = {
     buildpic            = [[kdroneengineer.png]],
     buildCostEnergy     = 100,
     buildCostMetal      = 100,
-    buildDistance       = 150,
+    buildDistance       = 300,
     builder             = true,
     buildoptions        = {
         [[kgrounddronestructure]],
         [[kairdronestructure]],
         [[kdronemininghub]],
-        [[lwarrior]],
+        [[lbigwalker]],
     },
 
     buildTime           = 15,
