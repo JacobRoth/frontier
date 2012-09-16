@@ -12,7 +12,9 @@ local lbigwalker = {
     buildoptions        = {
         [[lwarrior]],
         [[lengineer]],
-        [[kdroneminerflyer]],
+        [[klightdrone]],
+        [[kdiairdrone]],
+        [[ktriairdrone]],
     },
 
     CanAttack           = true,
@@ -101,7 +103,7 @@ local lbigwalker = {
             isShield                = true,
             shieldAlpha             = 1,
             shieldBadColor          = [[1 0 0]],
-            shieldGoodColor         = [[0 1 1]],
+            shieldGoodColor         = [[0 0 1]],
             shieldforce             = 10,
             shieldInterceptType     = 1,
             shieldPower             = 800,
