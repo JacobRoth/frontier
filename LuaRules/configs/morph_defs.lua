@@ -136,7 +136,7 @@ local morphDefs = {
 
 --[[
 
-  kdroneengineer = {
+  lengineer = {
     {
       into = 'kdroneminingtower',
       metal = 0,
@@ -149,7 +149,7 @@ local morphDefs = {
  
   kdroneminingtower = {
     {
-      into = 'kdroneengineer',
+      into = 'lengineer',
       metal = 0,
       energy = 50,
       time = 5,

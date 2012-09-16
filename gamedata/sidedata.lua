@@ -7,7 +7,7 @@ local
   },
   [2] = {
     name      = 'Locusts',
-   startunit = 'kdroneengineer',
+   startunit = 'lbigwalker',
   },
 }
 return sideData

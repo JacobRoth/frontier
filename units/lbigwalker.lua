@@ -11,6 +11,8 @@ local lbigwalker = {
     builder             = true,
     buildoptions        = {
         [[lwarrior]],
+        [[lengineer]],
+        [[kdroneminerflyer]],
     },
 
     CanAttack           = true,
@@ -22,6 +24,7 @@ local lbigwalker = {
     canStop             = true,
     category            = [[LAND]],
     corpse              = [[DEAD]],
+    customParams = { is_dropoff=true,   },
     reclaimable         = false,
     
     cloakCost           = 2,
@@ -29,13 +32,13 @@ local lbigwalker = {
     cloakTimeout        = 0,
     init_Cloaked        = false,    
     
-    energyMake          = 0,
+    energyMake          = 30,
     explodeAs           = [[DRONE_GROUND_UNIT]],
     footprintx          = 14,
     footprintZ          = 14,
     idleAutoHeal        = 1,
     leaveTracks         = false,
-    mass                = 80,
+    mass                = 800,
     maxDamage           = 700,
     maxSlope            = 99999999,
     maxVelocity         = 3,
@@ -48,7 +51,7 @@ local lbigwalker = {
     seismicSignature    = 4,
     selfDestructAs      = [[DRONE_GROUND_UNIT]],
     side                = [[Drone]],
-    sightDistance       = 400,
+    sightDistance       = 1000,
     
     sfxtypes            = {
         explosiongenerators = {
@@ -77,63 +80,43 @@ local lbigwalker = {
     script              = "lbigwalker.lua",
 
     weapons             = {
-    
         {
-          def                = [[Laser]],
-          badTargetCategory  = [[SWIM LAND SHIP HOVER]],
-          onlyTargetCategory = [[SWIM LAND SINK FLOAT SHIP HOVER]],
+            def = [[Shield]],
         },
-    
-      },
-    
-    
-    weaponDefs             = {
-    
-        Laser = {
-          name                    = [[BeamLaser]],
-          areaOfEffect            = 8,
-          avoidFeature            = false,
-          coreThickness           = 0.5,
-          collideFriendly         = false,
-          craterMult              = 0.25,
-    
-          damage                  = {
-        --Anti-Land
-        default = 50,
-        Cruiser = 50,
-        Building = 50,
-        Tank = 100,
-        Aircraft = 50,
-        Ship = 50,
-        Sub = 50,
-
-        Meteor = 0,
-        Drone = 50,
-        Spare1 = 50,
-        Spare2 = 50,
-        Spare3 = 50,
-          },
-
-          beamTime                = 0.5,
-          explosionGenerator      = [[custom:ct_impact_beam_green]],
-          duration                = 5,
-          energypershot           = 0,
-          interceptedByShieldType = 1,
-          heightMod               = 0.5,
-          lineOfSight             = true,
-          range                   = 500,
-          reloadtime              = 2,
-          rgbColor                = [[0 1 0]],
-          soundStart              = [[ct/pew1]],
-          targetMoveError         = 0,
-          thickness               = 5,
-          tolerance               = 100,
-          turret                  = true,
-          weaponType              = [[BeamLaser]],
-          weaponVelocity          = 2000,
+    },
+        
+    weaponDefs          = {
+            
+        Shield = {
+            name                    = [[Energy Shield]],
+            craterMult              = 0,
+        
+            damage                  = {
+                default = 10,
+            },
+        
+            exteriorShield          = true,
+            impulseFactor           = 0,
+            interceptedByShieldType = 1,
+            isShield                = true,
+            shieldAlpha             = 1,
+            shieldBadColor          = [[1 0 1]],
+            shieldGoodColor         = [[0 1 0]],
+            shieldforce             = 10,
+            shieldInterceptType     = 1,
+            shieldPower             = 800,
+            shieldPowerRegen        = 5,
+            shieldPowerRegenEnergy  = 15,
+            shieldRadius            = 420,
+            shieldRepulser          = true,
+            smartShield             = true,
+            visibleShield           = true,
+            visibleShieldHitFrames  = 4,
+            visibleShieldRepulse    = true,
+            weaponType              = [[Shield]],
         },
-    
-      },    
+        
+    },
     
     featureDefs         = {
     

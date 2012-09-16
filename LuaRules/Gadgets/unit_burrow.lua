@@ -13,7 +13,7 @@ end
 ------------------------------------------------------------------------
 local Burrowers = {
 	[UnitDefNames.klightdrone.id] = "klightdrone",
-	[UnitDefNames.kdroneengineer.id] = "kdroneengineer",
+	[UnitDefNames.lengineer.id] = "lengineer",
 	[UnitDefNames.lwarrior.id] = "lwarrior",
 }
 

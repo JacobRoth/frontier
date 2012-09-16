@@ -1,9 +1,9 @@
-local kdroneengineer = {
+local lengineer = {
     name                = [[Drone Builder]],
     description         = [[Unarmed construction unit. Can Transform into a Drone Mining Tower to accumulate metal. Can Burrow.]],
     acceleration        = 1,
     brakerate           = 0.1,
-    buildpic            = [[kdroneengineer.png]],
+    buildpic            = [[lengineer.png]],
     buildCostEnergy     = 100,
     buildCostMetal      = 100,
     buildDistance       = 300,
@@ -55,7 +55,7 @@ local kdroneengineer = {
     maxWaterDepth       = 10000,
     metalMake           = 0,
     movementClass       = [[kdrone]],
-    objectName          = "kdroneengineer.s3o",
+    objectName          = "lengineer.s3o",
     onoffable           = false,
     seismicSignature    = 4,
     selfDestructAs      = [[DRONE_GROUND_UNIT]],
@@ -86,7 +86,7 @@ local kdroneengineer = {
     showNanospray       = 1,
     Resurrectspeed      = 100,
     workerTime          = 1,
-    script              = "kdroneengineer.lua",
+    script              = "lengineer.lua",
 
     featureDefs         = {
     
@@ -100,7 +100,7 @@ local kdroneengineer = {
           footprintX       = 3,
           footprintZ       = 3,
           metal            = 50,
-          object           = [[wrecks/kdroneengineerwreck.s3o]],
+          object           = [[wrecks/lengineerwreck.s3o]],
           reclaimable      = true,
           reclaimTime      = 1500,
         },
@@ -125,4 +125,4 @@ local kdroneengineer = {
     }
 
 
-return lowerkeys({ ["kdroneengineer"] = kdroneengineer })
+return lowerkeys({ ["lengineer"] = lengineer })

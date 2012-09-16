@@ -29,7 +29,8 @@ local resreturneffect = "resdropoff_singleparticle" --ceg effect played at miner
 function gadget:UnitFinished(unitID, unitDefID, teamID)
     --Spring.Echo(unitName (unitID) )
     if (is_miner_type (unitDefID) == true) then 
-        Spring.GiveOrderToUnit(unitID, CMD.FIRE_STATE , { 0 }, {}) --hold fire
+        --Spring.GiveOrderToUnit(unitID, CMD.FIRE_STATE , { 0 }, {}) --hold fire
+        search_res (unitID)
         add_miner (unitID) 
     end
     if (is_dropoff_type (unitDefID) == true) then add_dropoff (unitID) end
@@ -355,7 +356,7 @@ function search_res (unitID)
     --miners[unitID].status = "send to search"
     local res = nearest_resID_from_miner (unitID)
     if (res) then Spring.GiveOrderToUnit(unitID, CMD.ATTACK  , { res }, {}) end
-    miners[unitID].status = "search finished"
+    --miners[unitID].status = "search finished"
 end
 
 function return_to_dropoff (unitID)
@@ -384,7 +385,6 @@ end
 
 --------------------------------------------------------
 --Border between SYNC and UNSYNC
---when i wear my frilly dress im a real touhou
 end
 if (not gadgetHandler:IsSyncedCode()) then
 --------------------------------------------------------

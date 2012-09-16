@@ -18,19 +18,19 @@ local unitOnMission = {} --[unitID] = wieviele frames in ruhe gelassen werden
 stages = {}
 --skipMetal: if we have that much metal, then this stage is autocomplete/skipped
 
---lwarrior kgrounddronestructure kdroneengineer kairdronestructure klightdrone
+--lwarrior kgrounddronestructure lengineer kairdronestructure klightdrone
 
 stages[1]= {
 	["unitNumbers"]={
 		["kgrounddronestructure"]=1,
-		["kdroneengineer"]=2,
+		["lengineer"]=2,
 		},
 	skipMetal = math.huge,
 	}
 
 stages[2]= {
 	["unitNumbers"]={
---		["kdroneengineer"]=2,
+--		["lengineer"]=2,
 		["kdroneminingtower"]=2,
 		},
 	skipMetal = 500,
@@ -171,12 +171,12 @@ end
 --naja
 function canUnitBuildThis (parentName, childName)
 	if (parentName == childName and not (parentName == "kgrounddronestructure" or parentName == "kairdronestructure")) then return true end--everything can clone itself, except the structure
-	if (parentName == "kdroneengineer" and childName == "kgrounddronestructure") then return true end
-	if (parentName == "kdroneengineer" and childName == "kdroneminingtower") then return true end
-	if (parentName == "kdroneengineer" and childName == "kairdronestructure") then return true end
+	if (parentName == "lengineer" and childName == "kgrounddronestructure") then return true end
+	if (parentName == "lengineer" and childName == "kdroneminingtower") then return true end
+	if (parentName == "lengineer" and childName == "kairdronestructure") then return true end
 	----land factory----
 	if (parentName == "kgrounddronestructure") then
-		if (childName == "kdroneengineer") then return true end
+		if (childName == "lengineer") then return true end
 		if (childName == "lwarrior") then return true end
 		if (childName == "kdroneroller") then return true end
 		if (childName == "ktridroneroller") then return true end		
@@ -189,7 +189,7 @@ function canUnitBuildThis (parentName, childName)
 		if (childName == "ktriairdrone") then return true end		
 	end	
 	--falls sich gar niemand findet, kann sich auch ein mining tower zum engineer zurück morphen:
-	if (parentName == "kdroneminingtower" and childName == "kdroneengineer") then return true end
+	if (parentName == "kdroneminingtower" and childName == "lengineer") then return true end
 	return false
 end
 
@@ -199,7 +199,7 @@ function doesUnitWantBuildJob (unitID, childname)
 
 	--mining tower haben keinen bock sich abzubauen wenn es noch engineers gibt
 	if (unitName (unitID) == "kdroneminingtower") then
-		if (#Spring.GetTeamUnitsByDefs (Spring.GetUnitTeam (unitID), {UnitDefNames["kdroneengineer"].id}) > 0) then return false end
+		if (#Spring.GetTeamUnitsByDefs (Spring.GetUnitTeam (unitID), {UnitDefNames["lengineer"].id}) > 0) then return false end
 	end
 	
 	--if ((unitOnMission[unitID] and unitOnMission[unitID] >0) and unitIsMobile(unitID)) then return false end
@@ -211,7 +211,7 @@ function doesUnitWantBuildJob (unitID, childname)
 end
 
 function buildUnit (unitID, jobname)
-	if (unitName (unitID) ==  "kdroneminingtower" and jobname == "kdroneengineer") then undeploy (unitID) end
+	if (unitName (unitID) ==  "kdroneminingtower" and jobname == "lengineer") then undeploy (unitID) end
 	
 	if (unitName (unitID) == jobname) then --same units can just clone each other
 		cloneUnit (unitID, UnitDefNames[jobname].id)		
@@ -230,7 +230,7 @@ function buildUnit (unitID, jobname)
 		return
 	end
 	
-	if (not unitOnMission[unitID] and unitName (unitID) ==  "kdroneengineer" and jobname == "kdroneminingtower") then
+	if (not unitOnMission[unitID] and unitName (unitID) ==  "lengineer" and jobname == "kdroneminingtower") then
 		--unitOnMission[unitID] = true
 		--moveAway (unitID, 2000)
 		unitOnMission[unitID] = 100
@@ -238,7 +238,7 @@ function buildUnit (unitID, jobname)
 		return
 	end
 	
-	if (unitName (unitID) == "kdroneengineer") then --engineer building whatever building
+	if (unitName (unitID) == "lengineer") then --engineer building whatever building
 			local ux,uy,uz = Spring.GetUnitPosition (unitID)
 			local x,y,z = getBuildSpot (ux,uy,uz, jobname, 200, 50)
 			Spring.GiveOrderToUnit(unitID, -UnitDefNames[jobname].id, {x,y,z}, {}) --bauen
@@ -253,9 +253,9 @@ function unitName (unitID)
 	return uDef.name
 end
 
---returns how many kdroneengineer and kdroneminingtowers a team has
+--returns how many lengineer and kdroneminingtowers a team has
 function countTowersAndEngineer (teamID)
-	return #Spring.GetTeamUnitsByDefs (teamID, {UnitDefNames["kdroneminingtower"].id}) + Spring.GetTeamUnitsByDefs (teamID, {UnitDefNames["kdroneengineer"].id})
+	return #Spring.GetTeamUnitsByDefs (teamID, {UnitDefNames["kdroneminingtower"].id}) + Spring.GetTeamUnitsByDefs (teamID, {UnitDefNames["lengineer"].id})
 end
 
 function unitCount (teamID, unitName)
@@ -313,8 +313,8 @@ function gadget:GameFrame(frame)
 		local h, missing = getHighestCompleteStage (myTeam[t])
 		--Spring.Echo ("team " .. myTeam[t] .. " is at stage " .. h)
 		if (missing) then
-			if (unitCount (myTeam[t], "kdroneengineer") < (missing["kdroneminingtower"] or 0) ) then
-				missing["kdroneengineer"] = (missing["kdroneengineer"] or 0) +  (missing["kdroneminingtower"] -unitCount (myTeam[t], "kdroneengineer"))
+			if (unitCount (myTeam[t], "lengineer") < (missing["kdroneminingtower"] or 0) ) then
+				missing["lengineer"] = (missing["lengineer"] or 0) +  (missing["kdroneminingtower"] -unitCount (myTeam[t], "lengineer"))
 			end
 		makeSomeUnits (myTeam[t], missing)
 		undeployEmptyMiningTowers (myTeam[t])
@@ -385,7 +385,7 @@ function deployAt (unitID, tx,tz, keys)
 end
 
 function undeploy (unitID)
-	Spring.GiveOrderToUnit(unitID, 31210,{UnitDefNames["kdroneengineer"].id},{})
+	Spring.GiveOrderToUnit(unitID, 31210,{UnitDefNames["lengineer"].id},{})
 end
 
 function do_attacknearest (unitID)
@@ -417,7 +417,7 @@ end
 
 --[[
 function sendOutIdleEngineers (teamID)
-	local engs = Spring.GetTeamUnitsByDefs (teamID, {UnitDefNames["kdroneengineer"].id})
+	local engs = Spring.GetTeamUnitsByDefs (teamID, {UnitDefNames["lengineer"].id})
 	if (engs == nil) then return end
 	--Spring.Echo ("#mtowers:" .. #mtowers)
 	for i in pairs (engs) do
@@ -433,9 +433,9 @@ end
 --]]
 
 function clonetest (teamID)
-	local munits = Spring.GetTeamUnitsByDefs (teamID, {UnitDefNames["kdroneengineer"].id})
+	local munits = Spring.GetTeamUnitsByDefs (teamID, {UnitDefNames["lengineer"].id})
 	for i in pairs (munits) do
-		cloneUnit (munits[i], UnitDefNames["kdroneengineer"].id)
+		cloneUnit (munits[i], UnitDefNames["lengineer"].id)
 	end
 end
 ------------------------------------------------------
@@ -462,7 +462,7 @@ function gadget:UnitFinished(unitID, unitDefID, teamID)
 	--if (teamID ~= myTeam) then return end
 	--Spring.Echo ("SchwarmAI: hab ne neue unit!")
 	--local unitDef = UnitDefs[unitDefID]
-	--if (unitDef.name == "kdroneengineer") then 
+	--if (unitDef.name == "lengineer") then 
 		--local nearest_resID, rx,ry,rz, nearest_res_distance  = nearestResFromUnit (unitID)
 		--Spring.Echo ("going to " .. rx .. ":" .. rz)
 		--deployAt (unitID,  rx+math.random(-50,50), rz+math.random(-50,50))		

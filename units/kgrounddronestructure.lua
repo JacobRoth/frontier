@@ -7,7 +7,7 @@ unitDef = {
   buildCostMetal                = 400,
   builder                       = true,
   buildoptions                  = {
-    [[kdroneengineer]],
+    [[lengineer]],
     [[klightdrone]],    
     [[lwarrior]],
     [[kdroneroller]],

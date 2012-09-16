@@ -2,8 +2,8 @@
 
 		--DRONE--
 
-		kdroneengineer = {
-			into = 'kdroneengineer',
+		lengineer = {
+			into = 'lengineer',
 			tech = 0,
 			time = 15,
 			metal = 100,
