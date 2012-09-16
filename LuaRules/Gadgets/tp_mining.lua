@@ -83,6 +83,11 @@ function gadget:GameFrame(frameNum)
             search_res (i)
         end
         
+        --debug v
+        --Spring.Echo(i)
+        --Spring.Echo(miners[i].cargo)
+        --debug ^
+        
         if (miners[i].cargo > 5 and is_miner_at_dropoff (i)) then   --drop the cargo
             local minerteam = Spring.GetUnitTeam (i)
             Spring.AddTeamResource (minerteam, "metal", miners[i].cargo)            
