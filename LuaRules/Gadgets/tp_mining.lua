@@ -21,7 +21,7 @@ local debug = false
 -----config-----
 local miner_name =  {}--{"bminer", "kdroneminingtower", "kdronebigminingtower", "kdroneminerflyer"}      --the unit used for mining
 local resource_name = {}--{"bminerals","bmeteorimpact","bmeteorimpact_big"}     --the stuff that gets mined
-local dropoff_name = {"bsupplydepot", "bsupplydepotai", "bprimarycruiserbase", "bprimarycruiserbaseai", "kdroneminingtower","kdronebigminingtower", "kdronemininghub"} --where the miners bring the resources to
+local dropoff_name = {}--{"bsupplydepot", "bsupplydepotai", "bprimarycruiserbase", "bprimarycruiserbaseai", "kdroneminingtower","kdronebigminingtower", "kdronemininghub"} --where the miners bring the resources to
 local dropoff_distance = 100 --how near do miners have to get to a dropoff to drop their cargo? (this value is added to unitRadius)
 local maxcargo = 25         --how much a miner can carry before having to return to a drop off
 local resreturneffect = "resdropoff_singleparticle" --ceg effect played at miners location when a miner returns its cargo
@@ -101,6 +101,7 @@ function gadget:Initialize()
     make_miner_table()
     make_resource_name_table ()
     make_miner_name_table ()
+    make_dropoff_name_table ()
     _G.miners = miners;
     _G.dropoffs = dropoffs
     _G.dropoff_distance = dropoff_distance
@@ -152,6 +153,20 @@ function make_miner_name_table ()
                 local minersname = unitDef.name
                 if (debug) then Spring.Echo ("tp_mining.lua: found miner" .. minersname) end
                 table.insert (miner_name, minersname)
+            end
+        end
+    end
+end
+
+
+function make_dropoff_name_table () 
+    for id,unitDef in pairs(UnitDefs) do
+        local cp = UnitDefs[id].customParams
+        if (cp) then
+            if (cp.is_dropoff) then
+                local doname = unitDef.name
+                if (debug) then Spring.Echo ("tp_mining.lua: found miner" .. minersname) end
+                table.insert (dropoff_name, doname)
             end
         end
     end
