@@ -40,7 +40,7 @@ stages = {}
 
 
 
---lwarrior kgrounddronestructure lengineer kairdronestructure klightdrone
+--lwarrior kgrounddronestructure lengineer kairdronestructure laadrone
 
 
 
@@ -335,11 +335,11 @@ function canUnitBuildThis (parentName, childName)
 
 		if (childName == "lwarrior") then return true end
 
-		if (childName == "kdroneroller") then return true end
+		if (childName == "lsiegebreaker") then return true end
 
 		if (childName == "ktridroneroller") then return true end		
 
-		if (childName == "klightdrone") then return true end
+		if (childName == "laadrone") then return true end
 
 	end
 
@@ -657,7 +657,7 @@ function gadget:GameFrame(frame)
 			local unitsWeMakeRaw = ourmetal/costofunit
 			local unitsWeMake = round(unitsWeMakeRaw,0)
 			for i=1,unitsWeMake do
-				unitWeWillMake = unweighted_choice( {"lwarrior", "klightdrone", "lwarrior", "klightdrone","lwarrior", "klightdrone", "lwarrior", "klightdrone", "kdiairdrone", "kdiaridrone", "ktriairdrone", "ktriairdrone", "ktriairdrone" } )
+				unitWeWillMake = unweighted_choice( {"lwarrior", "laadrone", "lwarrior", "laadrone","lwarrior", "laadrone", "lwarrior", "laadrone", "kdiairdrone", "kdiaridrone", "ktriairdrone", "ktriairdrone", "ktriairdrone" } )
 				makeSomeUnits(myTeam[t], {[unitWeWillMake]=1} )
 			end
 		end

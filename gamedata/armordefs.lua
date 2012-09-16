@@ -118,8 +118,8 @@
 
             "lengineer",
             "lwarrior",
-            "klightdrone",
-            "kdroneroller",
+            "laadrone",
+            "lsiegebreaker",
             "ktridroneroller",
         },
 

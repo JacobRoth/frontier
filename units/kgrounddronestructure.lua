@@ -8,9 +8,9 @@ unitDef = {
   builder                       = true,
   buildoptions                  = {
     [[lengineer]],
-    [[klightdrone]],    
+    [[laadrone]],    
     [[lwarrior]],
-    [[kdroneroller]],
+    [[lsiegebreaker]],
     [[ktridroneroller]],
   },
   

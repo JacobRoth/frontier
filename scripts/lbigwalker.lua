@@ -32,24 +32,26 @@
 
     --CEGs
     local ct_dirt = SFX.CEG 
+    
+    local speed = 0.5
 
 
     --local functions
     local function Walk()
             SetSignalMask( walk_go )
-        Turn( rfthigh, x_axis, -0.25, 2 )
-        Turn( lbthigh, x_axis, -0.15, 2 )
+        Turn( rfthigh, x_axis, -0.25, speed )
+        Turn( lbthigh, x_axis, -0.15, speed )
 
         WaitForTurn( rfthigh, x_axis )
         WaitForTurn( lbthigh, x_axis )
                 Sleep(1)
 
             while ( true ) do
-            Turn( lfthigh, x_axis, -0.25, 2)
-            Turn( rbthigh, x_axis, -0.15, 2)
+            Turn( lfthigh, x_axis, -0.25, speed)
+            Turn( rbthigh, x_axis, -0.15, speed)
 
-            Turn (rfthigh, x_axis, 0.15, 2)
-            Turn (lbthigh, x_axis, 0.25, 2)
+            Turn (rfthigh, x_axis, 0.15, speed)
+            Turn (lbthigh, x_axis, 0.25, speed)
 
             WaitForTurn( lfthigh, x_axis )
             WaitForTurn( rbthigh, x_axis )
@@ -58,11 +60,11 @@
             WaitForTurn( lbthigh, x_axis )
             Sleep(1)
 
-            Turn( lfthigh, x_axis, 0.15, 2)
-            Turn( rbthigh, x_axis, 0.25, 2)
+            Turn( lfthigh, x_axis, 0.15, speed)
+            Turn( rbthigh, x_axis, 0.25, speed)
 
-            Turn (rfthigh, x_axis, -0.25, 2)
-            Turn (lbthigh, x_axis, -0.15, 2)
+            Turn (rfthigh, x_axis, -0.25, speed)
+            Turn (lbthigh, x_axis, -0.15, speed)
 
             WaitForTurn( lfthigh, x_axis )
             WaitForTurn( rbthigh, x_axis )
@@ -75,11 +77,11 @@
     
     local function StopWalk()
             Signal( walk_go )
-            Turn( lfthigh, x_axis, 0, 2)
-            Turn( rbthigh, x_axis, 0, 2)
+            Turn( lfthigh, x_axis, 0, speed)
+            Turn( rbthigh, x_axis, 0, speed)
 
-            Turn (rfthigh, x_axis, 0, 2)
-            Turn (lbthigh, x_axis, 0, 2)
+            Turn (rfthigh, x_axis, 0, speed)
+            Turn (lbthigh, x_axis, 0, speed)
     end
 
     local function BurrowAnim()

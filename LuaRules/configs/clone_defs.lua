@@ -26,16 +26,16 @@
 			energy = 100,
 		},
   
-		kdroneroller = {
-			into = 'kdroneroller',
+		lsiegebreaker = {
+			into = 'lsiegebreaker',
 			tech = 0,
 			time = 15,
 			metal = 250,
 			energy = 250,
 		},
 
-		klightdrone = {
-			into = 'klightdrone',
+		laadrone = {
+			into = 'laadrone',
 			tech = 0,
 			time = 15,
 			metal = 150,

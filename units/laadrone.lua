@@ -1,9 +1,9 @@
-local klightdrone = {
+local laadrone = {
 	name                = [[Skyward Drone]],
 	description         = [[Fires a blob of plasma into the sky, destroying aircraft and flying units. Can Burrow.]],
     acceleration        = 1,
     brakerate           = 0.1,
-    buildpic            = [[klightdrone.png]],
+    buildpic            = [[laadrone.png]],
 	buildCostEnergy     = 150,
 	buildCostMetal      = 150,
 	buildTime           = 15,
@@ -35,7 +35,7 @@ local klightdrone = {
     metalMake           = 0,
 	movementClass       = [[kdrone]],
     noChaseCategory     = [[SWIM LAND SHIP SINK FLOAT HOVER MINERALS SUB]],
-	objectName          = "klightdrone.s3o",
+	objectName          = "laadrone.s3o",
     onoffable           = false,
     seismicSignature    = 4,
     selfDestructAs      = [[DRONE_GROUND_UNIT]],
@@ -60,7 +60,7 @@ local klightdrone = {
 	smoothAnim          = true,
 	turnInPlace         = 1,
 	turnRate            = 1000,
-	script              = "klightdrone.lua",
+	script              = "laadrone.lua",
 
 	weapons             = {
 	
@@ -157,4 +157,4 @@ local klightdrone = {
 	}
 
 
-return lowerkeys({ ["klightdrone"] = klightdrone })
+return lowerkeys({ ["laadrone"] = laadrone })

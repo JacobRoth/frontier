@@ -12,7 +12,7 @@ function gadget:GetInfo()
 end
 ------------------------------------------------------------------------
 local Burrowers = {
-	[UnitDefNames.klightdrone.id] = "klightdrone",
+	[UnitDefNames.laadrone.id] = "laadrone",
 	[UnitDefNames.lengineer.id] = "lengineer",
 	[UnitDefNames.lwarrior.id] = "lwarrior",
 }

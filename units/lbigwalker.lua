@@ -12,7 +12,7 @@ local lbigwalker = {
     buildoptions        = {
         [[lwarrior]],
         [[lengineer]],
-        [[klightdrone]],
+        [[laadrone]],
         [[kdiairdrone]],
         [[ktriairdrone]],
     },

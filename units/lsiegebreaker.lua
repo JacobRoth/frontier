@@ -1,12 +1,12 @@
 	unitDef = {
-	  unitname            = [[kdroneroller]],
+	  unitname            = [[lsiegebreaker]],
 	  name                = [[Roller Drone]],
 	  description         = [[Heavily armored Drone which fires a long range blob of plasma which destroys Buildings.]],
 	  acceleration        = 1,
 	  brakeRate           = 0.1,
 	  buildCostEnergy     = 250,
 	  buildCostMetal      = 250,
-	  buildPic            = [[kdroneroller.png]],
+	  buildPic            = [[lsiegebreaker.png]],
 	  buildTime           = 10,
 	  canAttack           = true,
 	  canGuard            = true,
@@ -31,7 +31,7 @@
 	  moveState           = 0,
 	  noAutoFire          = false,
 	  noChaseCategory     = [[MINERALS FIXEDWING GUNSHIP CRUISER SUB]],
-	  objectName          = [[kdroneroller.s3o]],
+	  objectName          = [[lsiegebreaker.s3o]],
 	  seismicSignature    = 4,
 	  selfDestructAs      = [[DRONE_GROUND_UNIT]],
 
@@ -56,7 +56,7 @@
 	  
 	  turnInPlace         = 1,
 	  turnRate            = 1000,
-	  script              = [[kdroneroller.lua]],
+	  script              = [[lsiegebreaker.lua]],
 	
 	  weapons             = {
 	
@@ -126,7 +126,7 @@
 	      footprintX       = 2,
 	      footprintZ       = 2,
 	      metal            = 125,
-	      object           = [[wrecks/kdronerollerwreck.s3o]],
+	      object           = [[wrecks/lsiegebreakerwreck.s3o]],
 	      reclaimable      = true,
 	      reclaimTime      = 3600,
 	    },
@@ -150,4 +150,4 @@
 	
 	}
 	
-	return lowerkeys({ kdroneroller = unitDef })
+	return lowerkeys({ lsiegebreaker = unitDef })

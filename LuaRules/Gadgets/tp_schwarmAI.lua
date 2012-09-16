@@ -18,7 +18,7 @@ local unitOnMission = {} --[unitID] = wieviele frames in ruhe gelassen werden
 stages = {}
 --skipMetal: if we have that much metal, then this stage is autocomplete/skipped
 
---lwarrior kgrounddronestructure lengineer kairdronestructure klightdrone
+--lwarrior kgrounddronestructure lengineer kairdronestructure laadrone
 
 stages[1]= {
 	["unitNumbers"]={
@@ -48,7 +48,7 @@ stages[4]= {
 	["unitNumbers"]={
 		["kairdronestructure"]=1,
 		["kdroneminingtower"]=4,
---		["klightdrone"]=3, --spread fire drone
+--		["laadrone"]=3, --spread fire drone
 		},
 	skipMetal = 1000,
 	}
@@ -84,7 +84,7 @@ stages[8]= {
 	
 stages[9]= {
 	["unitNumbers"]={
-		["klightdrone"] =10,
+		["laadrone"] =10,
 		},
 	skipMetal = math.huge,
 	}
@@ -178,9 +178,9 @@ function canUnitBuildThis (parentName, childName)
 	if (parentName == "kgrounddronestructure") then
 		if (childName == "lengineer") then return true end
 		if (childName == "lwarrior") then return true end
-		if (childName == "kdroneroller") then return true end
+		if (childName == "lsiegebreaker") then return true end
 		if (childName == "ktridroneroller") then return true end		
-		if (childName == "klightdrone") then return true end
+		if (childName == "laadrone") then return true end
 	end
 	----air factory----
 	if (parentName == "kairdronestructure") then
