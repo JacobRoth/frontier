@@ -4,10 +4,10 @@
       description         = [[Ultimate Assault Tank]],
       acceleration        = 1,
       brakeRate           = 0.1,
-      buildCostEnergy     = 5000,
-      buildCostMetal      = 5000,
+      buildCostEnergy     = 10000,
+      buildCostMetal      = 10000,
       buildPic            = [[lsiegebreaker.png]],
-      buildTime           = 200,
+      buildTime           = 400,
       canAttack           = true,
       canGuard            = true,
       canMove             = true,
@@ -17,8 +17,8 @@
       corpse              = [[DEAD]],
       reclaimable         = false,
       explodeAs           = [[DRONE_GROUND_UNIT]],
-      footprintx          = 30,
-      footprintZ          = 30,
+      footprintx          = 19,
+      footprintZ          = 19,
       highTrajectory      = 2,
       idleAutoHeal        = 0,
       leaveTracks         = true,
@@ -82,7 +82,7 @@
     
           damage                  = {
             default = 1500,
-            Meteor = 0,
+            Meteor = 1,
           },
     
        -- model                   = [[bshell.s3o]],

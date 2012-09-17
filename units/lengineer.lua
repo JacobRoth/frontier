@@ -9,10 +9,8 @@ local lengineer = {
     buildDistance       = 300,
     builder             = true,
     buildoptions        = {
-        [[kgrounddronestructure]],
-        [[kairdronestructure]],
-        [[kdronemininghub]],
         [[lbigwalker]],
+        [[lsiegebreaker]],
     },
 
     buildTime           = 15,
