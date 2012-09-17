@@ -9,7 +9,7 @@
     local flare1 = piece "flare1"
     local flare2 = piece "flare2"
 
-    local spinspeed = 2
+    local spinspeed = 1.5
 
     --signals
     local SIG_AIM = 1
