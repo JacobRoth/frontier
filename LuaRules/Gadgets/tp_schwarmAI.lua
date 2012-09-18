@@ -178,7 +178,7 @@ function canUnitBuildThis (parentName, childName)
 	if (parentName == "kgrounddronestructure") then
 		if (childName == "lengineer") then return true end
 		if (childName == "lwarrior") then return true end
-		if (childName == "lsiegebreaker") then return true end
+		if (childName == "kdroneroller") then return true end
 		if (childName == "ktridroneroller") then return true end		
 		if (childName == "laadrone") then return true end
 	end

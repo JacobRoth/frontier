@@ -119,7 +119,7 @@
             "lengineer",
             "lwarrior",
             "laadrone",
-            "lsiegebreaker",
+            "kdroneroller",
             "ktridroneroller",
         },
 

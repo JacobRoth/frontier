@@ -26,8 +26,8 @@
 			energy = 100,
 		},
   
-		lsiegebreaker = {
-			into = 'lsiegebreaker',
+		kdroneroller = {
+			into = 'kdroneroller',
 			tech = 0,
 			time = 15,
 			metal = 250,

@@ -1,7 +1,7 @@
 local modinfo = {
         name = "Frontier",
         shortname = "fn",
-        version = "beta3",
+        version = "$VERSION",
         game = "Frontier",
         shortgame = "fn",
         description = "Frontier",

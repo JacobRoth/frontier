@@ -10,7 +10,7 @@ local lengineer = {
     builder             = true,
     buildoptions        = {
         [[lbigwalker]],
-        [[lsiegebreaker]],
+        [[kdroneroller]],
     },
 
     buildTime           = 15,

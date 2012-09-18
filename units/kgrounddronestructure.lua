@@ -10,7 +10,7 @@ unitDef = {
     [[lengineer]],
     [[laadrone]],    
     [[lwarrior]],
-    [[lsiegebreaker]],
+    [[kdroneroller]],
     [[ktridroneroller]],
   },
   

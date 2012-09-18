@@ -238,7 +238,7 @@ end
 function canUnitBuildThis (parentName, childName)
 
 
-    if (parentName == childName and (parentName == "lwarrior" or parentName == "lengineer" or parentName == "lsiegebreaker" or parentName == "ktridroneroller")) then return true end--these units can clone themselves
+    if (parentName == childName and (parentName == "lwarrior" or parentName == "lengineer" or parentName == "kdroneroller" or parentName == "ktridroneroller")) then return true end--these units can clone themselves
 
     if (parentName == "lengineer" and childName == "kgrounddronestructure") then return true end
 
@@ -256,7 +256,7 @@ function canUnitBuildThis (parentName, childName)
 
         if (childName == "lwarrior") then return true end
 
-        if (childName == "lsiegebreaker") then return true end
+        if (childName == "kdroneroller") then return true end
 
         if (childName == "ktridroneroller") then return true end        
 

@@ -335,7 +335,7 @@ function canUnitBuildThis (parentName, childName)
 
 		if (childName == "lwarrior") then return true end
 
-		if (childName == "lsiegebreaker") then return true end
+		if (childName == "kdroneroller") then return true end
 
 		if (childName == "ktridroneroller") then return true end		
 
