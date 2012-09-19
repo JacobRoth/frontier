@@ -2,7 +2,7 @@ local carrierDefs = {}
 
 local carrierDefNames = {
         --armcarry = {drone = UnitDefNames.carrydrone.id, reloadTime = 15, maxDrones = 8, spawnSize = 2, range = 1600}, -- this line was from Zero-K
-        lbigwalker = {drone = UnitDefNames.kdroneminerflyer.id, reloadTime = 10, maxDrones = 6, spawnSize = 1, range = 1600},
+        lengineer = {drone = UnitDefNames.kdroneminerflyer.id, reloadTime = 10, maxDrones = 6, spawnSize = 1, range = 1600},
 }
 
 --[[local presets = {

@@ -45,7 +45,7 @@
 	  },
 
 	  side                = [[Drone]],
-	  sightDistance       = 750,
+	  sightDistance       = 300,
 	  smoothAnim          = true,
 	  
 	  trackOffset         = 3,

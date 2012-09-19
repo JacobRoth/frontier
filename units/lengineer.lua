@@ -32,7 +32,8 @@ local lengineer = {
         ring1color = "1,1,0,0.5",  
         ring1thickness = "3", 
         ring1showselected = "1", 
-        ring1sides = "32",      
+        ring1sides = "32",
+        is_dropoff=true,      
     },
     
     cloakCost           = 2,
