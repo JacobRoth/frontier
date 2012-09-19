@@ -170,6 +170,61 @@ function gadget:GameFrame(n)
   end
 end
 
+local function UpdateCarrierTarget(carrierID)
+        local cQueueC = GetCommandQueue(carrierID, 1)
+        if cQueueC and cQueueC[1] and cQueueC[1].id == CMD_ATTACK then
+                local ox,oy,oz = GetUnitPosition(carrierID)
+                local params = cQueueC[1].params
+                local px,py,pz
+                if #params == 1 then
+                        px,py,pz = Spring.GetUnitPosition(params[1])
+                else
+                        px,py,pz = unpack(params)
+                end
+                if not px then return end
+                -- check range
+                local dist = GetDistance(ox,px,oz,pz)
+                if dist > carrierDefs[carrierList[carrierID].unitDefID].range then
+                        return
+                end
+               
+                for droneID in pairs(carrierList[carrierID].drones) do
+                        --[[
+                        local cQueue = GetCommandQueue(droneID, 1)
+                        local engaged = false
+                        if cQueue and cQueue[1] and cQueue[1].id == CMD_ATTACK then
+                                engaged = true
+                        end
+                        ]]--
+                        --if not engaged then
+                                --Spring.Echo("Ordering drone " .. droneID .. " to attack")
+                                droneList[droneID] = nil        -- to keep AllowCommand from blocking the order
+                                GiveOrderToUnit(droneID, CMD.FIGHT, {(px + (random(0,200) - 100)), (py+120), (pz + (random(0,200) - 100))} , {""})
+                                GiveOrderToUnit(droneID, CMD.GUARD, {carrierID} , {"shift"})
+                                droneList[droneID] = carrierID
+                        --end
+                end
+        else
+                for droneID in pairs(carrierList[carrierID].drones) do
+                        local cQueue = GetCommandQueue(droneID)
+                        local engaged = false
+                        for i=1, (cQueue and #cQueue or 0) do
+                                if cQueue[i].id == CMD.FIGHT then
+                                        engaged = true
+                                        break
+                                end
+                        end
+                        if not engaged then
+                                local px,py,pz = GetUnitPosition(carrierID)
+                                droneList[droneID] = nil        -- to keep AllowCommand from blocking the order
+                                GiveOrderToUnit(droneID, CMD.FIGHT, {(px + (random(0,200) - 100)), (py+120), (pz + (random(0,200) - 100))} , {""})
+                                GiveOrderToUnit(droneID, CMD.GUARD, {carrierID} , {"shift"})
+                                droneList[droneID] = carrierID
+                        end
+                end    
+        end
+end
+
 --[[
 function gadget:Initialize()
         for udid,data in pairs(carrierDefs) do
