@@ -61,7 +61,7 @@ local droneList = {}
 
 local function InitCarrier(unitDefID, unitAllyID)
         local carrierData = carrierDefs[unitDefID]
-        return {unitDefID = unitDefID, unitAllyID = unitAllyID, droneCount = 0, reload = carrierData.reloadTime, drones = {}}
+        return {unitDefID = unitDefID, unitAllyID = unitAllyID, droneCount = 0, reload = carrierData.reloadTime, drones = {}, managed=carrierData.managed}
 end
 
 local function NewDrone(unitID, unitDefID, droneName)
@@ -138,13 +138,15 @@ function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOpt
   return true --modified it so that it will allow drones to be controlled by other scripts.
 end
 
---[[
+
 function gadget:UnitCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions)
         if (carrierList[unitID]) then
-                UpdateCarrierTarget(unitID)
+			if (carrierList[unitID].managed) then
+				UpdateCarrierTarget(unitID)
+            end
         end
 end
-]]--
+
 
 function gadget:GameFrame(n)
   if (((n+1) % 30) < 0.1) then
@@ -165,12 +167,15 @@ function gadget:GameFrame(n)
   end
   if ((n % DEFAULT_UPDATE_ORDER_FREQUENCY) < 0.1) then
         for i,_ in pairs(carrierList) do
-                --UpdateCarrierTarget(i)
+			if (carrierList[i].managed==true) then
+				UpdateCarrierTarget(i)
+			end
         end
   end
 end
 
-local function UpdateCarrierTarget(carrierID)
+function UpdateCarrierTarget(carrierID)
+		--Spring.Echo("updating carrier target!")
         local cQueueC = GetCommandQueue(carrierID, 1)
         if cQueueC and cQueueC[1] and cQueueC[1].id == CMD_ATTACK then
                 local ox,oy,oz = GetUnitPosition(carrierID)
