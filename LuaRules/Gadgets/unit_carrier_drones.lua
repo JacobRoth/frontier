@@ -77,10 +77,11 @@ local function NewDrone(unitID, unitDefID, droneName)
   SetUnitPosition(droneID, xS, zS, true)
   GiveOrderToUnit(droneID, CMD.MOVE_STATE, { 2 }, {})
   GiveOrderToUnit(droneID, CMD.IDLEMODE, { 0 }, {})
-  --GiveOrderToUnit(droneID, CMD.AUTOREPAIRLEVEL, { 3 }, {})
-  --GiveOrderToUnit(droneID, CMD.FIGHT,  {(x + (random(0,600) - 300)), 60, (z + (random(0,600) - 300))}, {""})
-  --GiveOrderToUnit(droneID, CMD.GUARD, {unitID} , {"shift"})
-   
+  if(carrierList[unitID].managed==true) then
+    --GiveOrderToUnit(droneID, CMD.AUTOREPAIRLEVEL, { 3 }, {})
+    --GiveOrderToUnit(droneID, CMD.FIGHT,  {(x + (random(0,600) - 300)), 60, (z + (random(0,600) - 300))}, {""})
+    GiveOrderToUnit(droneID, CMD.GUARD, {unitID} , {"shift"})
+  end
   SetUnitNoSelect(droneID,true)
  
   droneList[droneID] = unitID
@@ -130,12 +131,16 @@ end
 
 
 function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions)
-  --[[if (droneList[unitID] ~= nil) then
-    return false
-  else
-    return true
+  --[[for i,v in pairs(carrierList) do
+	--Spring.Echo(carrierList[i].managed)
+	if(carrierList[i].managed==true) then --if we find the unit in here, return false
+		--Spring.Echo(carrierList[i].managed)
+		if(carrierList[i].drones[unitID]==true) then
+			return false
+		end
+	end
   end]]
-  return true --modified it so that it will allow drones to be controlled by other scripts.
+  return true --modified it so that it will allow drones to be controlled by other scripts
 end
 
 

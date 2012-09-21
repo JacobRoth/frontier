@@ -7,15 +7,15 @@ local lbigwalker = {
     buildCostEnergy     = 300,
     buildCostMetal      = 300,
     buildTime           = 100,
-    buildDistance       = 300,
-    builder             = true,
-    buildoptions        = {
-        [[lwarrior]],
-        [[lengineer]],
-        [[laadrone]],
-        [[kdiairdrone]],
-        [[ktriairdrone]],
-    },
+    --buildDistance       = 300,
+    builder             = false,
+    --buildoptions        = {
+    --    [[lwarrior]],
+    --    [[lengineer]],
+    --    [[laadrone]],
+    --    [[kdiairdrone]],
+    --    [[ktriairdrone]],
+    --},
 
     CanAttack           = true,
     canAssist           = true,
@@ -41,7 +41,7 @@ local lbigwalker = {
     idleAutoHeal        = 1,
     leaveTracks         = false,
     mass                = 800,
-    maxDamage           = 700,
+    maxDamage           = 1000,
     maxSlope            = 99999999,
     maxVelocity         = 3,
     maxWaterDepth       = 10000,
@@ -85,9 +85,58 @@ local lbigwalker = {
         {
             def = [[Shield]],
         },
+        {
+          def                = [[Laser]],
+          badTargetCategory  = [[SWIM LAND SHIP HOVER]],
+          onlyTargetCategory = [[SWIM LAND SINK FLOAT SHIP HOVER]],
+        },
+        
     },
         
     weaponDefs          = {
+        Laser = {
+          name                    = [[BeamLaser]],
+          areaOfEffect            = 8,
+          avoidFeature            = false,
+          coreThickness           = 0.5,
+          collideFriendly         = false,
+          craterMult              = 0.25,
+    
+          damage                  = {
+        --Anti-Land
+        default = 100,
+        --[[Cruiser = 50,
+        Building = 50,
+        Tank = 100,
+        Aircraft = 50,
+        Ship = 50,
+        Sub = 50,
+
+        Meteor = 0,
+        Drone = 50,
+        Spare1 = 50,
+        Spare2 = 50,
+        Spare3 = 50,]]
+          },
+
+          beamTime                = 0.5,
+          explosionGenerator      = [[custom:ct_impact_beam_green]],
+          duration                = 5,
+          energypershot           = 0,
+          interceptedByShieldType = 1,
+          heightMod               = 0.5,
+          lineOfSight             = true,
+          range                   = 1500,
+          reloadtime              = 2,
+          rgbColor                = [[0 1 0]],
+          soundStart              = [[ct/pew1]],
+          targetMoveError         = 0,
+          thickness               = 15,
+          tolerance               = 100,
+          turret                  = true,
+          weaponType              = [[BeamLaser]],
+          weaponVelocity          = 2000,
+        },
             
         Shield = {
             name                    = [[Energy Shield]],

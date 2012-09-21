@@ -7,7 +7,7 @@ local
   },
   [2] = {
     name      = 'Locusts',
-   startunit = 'lbigwalker',
+   startunit = 'lengineer',
   },
 }
 return sideData
