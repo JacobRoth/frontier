@@ -82,9 +82,9 @@ local lbigwalker = {
     script              = "lbigwalker.lua",
 
     weapons             = {
-        {
-            def = [[Shield]],
-        },
+        --{
+        --    def = [[Shield]],
+        --}
         {
           def                = [[Laser]],
           badTargetCategory  = [[SWIM LAND SHIP HOVER]],
