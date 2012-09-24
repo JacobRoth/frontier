@@ -63,6 +63,7 @@
  
             {
               def = [[Shield]],
+              badTargetCategory = [[SWIM LAND SINK FLOAT SHIP HOVER]],
             },
             
       },

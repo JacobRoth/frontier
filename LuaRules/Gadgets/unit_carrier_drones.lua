@@ -91,7 +91,7 @@ function gadget:UnitDestroyed(unitID, unitDefID, unitTeam)
   if (carrierList[unitID]) then
     for droneID in pairs(carrierList[unitID].drones) do
                 droneList[droneID] = nil
-                AddUnitDamage(droneID,1000)
+                AddUnitDamage(droneID,10000)
     end
     carrierList[unitID] = nil
   elseif (droneList[unitID]) then
