@@ -32,6 +32,7 @@ if (not gadgetHandler:IsSyncedCode()) then
   return
 end
 
+local carrierDefs = include "LuaRules/Configs/drone_defs.lua"
 
 --Speed-ups
 
