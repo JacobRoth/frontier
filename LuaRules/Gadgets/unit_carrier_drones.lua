@@ -16,7 +16,7 @@ function gadget:GetInfo()
   return {
     name      = "CarrierDrones",
     desc      = "Spawns drones for aircraft carriers",
-    author    = "TheFatConroller, modified by KingRaptor",
+    author    = "formerly TheFatConroller and KingRaptor, rewritten by yanom",
     date      = "12.01.2008",
     license   = "GNU GPL, v2 or later",
     layer     = 0,
@@ -83,7 +83,10 @@ function table.tostring( tbl )
 end
 ---------------------------------------------------------------------------------
 local carrierList = {}
-local droneList = {}
+--local droneList = {}
+
+--reminder - here's how to get a unit's Def: local udID =Spring.GetUnitDefID(unitID)
+--also: Spring.GetUnitAllyTeam and Spring.GetUnitTeam
 ---------------------------------------------------------------------------------
 
 
@@ -96,9 +99,9 @@ local function InitCarrier(unitDefID, unitAllyID)
     local carrierData = carrierDefs[unitDefID]
     returnme={}
     for i,v in pairs(carrierData) do
-		returnme[i]={unitDefID = unitDefID, unitAllyID = unitAllyID, droneCount = 0, reload = carrierData.reloadTime, drones = {}, managed=carrierData.managed}
+		returnme[i]={unitDefID = unitDefID, unitAllyID = unitAllyID, droneCount = 0, reload = carrierData.reloadTime, drones = {}, }
     end
-    Spring.Echo(table.tostring(returnme))
+    --Spring.Echo(table.tostring(returnme))
     return returnme
 end
 
