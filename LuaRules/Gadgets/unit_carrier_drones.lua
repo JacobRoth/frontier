@@ -8,7 +8,83 @@
 --
 --  Copyright (C) 2007.
 --  Licensed under the terms of the GNU GPL, v2 or later.
---
+
+-- Data Structures:
+--[[
+drone_defs: (indexed by unitDefID)
+	table ???:
+		table 1:
+			drone Unit ID
+			reloadTime
+			maxDrones
+			spawnSize
+			range
+			managed (boolean)
+		table 2:
+			drone Unit ID
+			reloadTime
+			maxDrones
+			spawnSize
+			range
+			managed (boolean)
+		table 3:
+			etc.
+	table ***:
+		etc
+
+
+carrierData: (indexed by unitID)
+	table ???:
+		table 1: (corresponds to above table 1 for data)
+			drones {   }
+			reload
+		table 2: (corresponds to above table 2 for data)
+			drones {   }
+			reload
+		table 3: 
+			etc
+	table ***:
+		etc
+
+]]
+--alternate data structure
+--[[
+
+drone_defs: --indexed numerically --inefficient(?) but easy(?) to code
+	--below, one unit can have multiple tables !
+	table 1:
+		host Unit Def ID
+		drone Unit Def ID
+		reloadTime
+		maxDrones
+		spawnSize
+		range
+		managed (boolean)
+	table 2:
+		host Unit Def ID
+		drone Unit Def ID
+		reloadTime
+		maxDrones
+		spawnSize
+		range
+		managed (boolean)
+	table 3:
+		etc
+	
+carrierData:
+	--below, one unit can have multiple tables !
+	table 1:
+		host Unit ID
+		drones {   }
+		reload
+	table 2:
+		host Unit ID
+		drones {   }
+		reload
+	table 3:
+		etc
+		
+]]
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
