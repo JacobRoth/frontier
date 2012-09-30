@@ -12,78 +12,119 @@
 -- Data Structures:
 --[[
 drone_defs: (indexed by unitDefID)
-	table ???:
-		table 1:
-			drone Unit ID
-			reloadTime
-			maxDrones
-			spawnSize
-			range
-			managed (boolean)
-		table 2:
-			drone Unit ID
-			reloadTime
-			maxDrones
-			spawnSize
-			range
-			managed (boolean)
-		table 3:
-			etc.
-	table ***:
-		etc
+    table ???:
+        table 1:
+            drone Unit ID
+            reloadTime
+            maxDrones
+            spawnSize
+            range
+            managed (boolean)
+        table 2:
+            drone Unit ID
+            reloadTime
+            maxDrones
+            spawnSize
+            range
+            managed (boolean)
+        table 3:
+            etc.
+    table ***:
+        etc
 
 
 carrierData: (indexed by unitID)
-	table ???:
-		table 1: (corresponds to above table 1 for data)
-			drones {   }
-			reload
-		table 2: (corresponds to above table 2 for data)
-			drones {   }
-			reload
-		table 3: 
-			etc
-	table ***:
-		etc
+    table ???:
+        table 1: (corresponds to above table 1 for data)
+            drones {   }
+            reload
+        table 2: (corresponds to above table 2 for data)
+            drones {   }
+            reload
+        table 3: 
+            etc
+    table ***:
+        etc
 
 ]]
 --alternate data structure
 --[[
 
 drone_defs: --indexed numerically --inefficient(?) but easy(?) to code
-	--below, one unit can have multiple tables !
-	table 1:
-		host Unit Def ID
-		drone Unit Def ID
-		reloadTime
-		maxDrones
-		spawnSize
-		range
-		managed (boolean)
-	table 2:
-		host Unit Def ID
-		drone Unit Def ID
-		reloadTime
-		maxDrones
-		spawnSize
-		range
-		managed (boolean)
-	table 3:
-		etc
-	
+    --below, one unit can have multiple tables !
+    table 1:
+        host Unit Def ID
+        drone Unit Def ID
+        reloadTime
+        maxDrones
+        spawnSize
+        range
+        managed (boolean)
+    table 2:
+        host Unit Def ID
+        drone Unit Def ID
+        reloadTime
+        maxDrones
+        spawnSize
+        range
+        managed (boolean)
+    table 3:
+        etc
+    
 carrierData:
-	--below, one unit can have multiple tables !
-	table 1:
-		host Unit ID
-		drones {   }
-		reload
-	table 2:
-		host Unit ID
-		drones {   }
-		reload
-	table 3:
-		etc
-		
+    --below, one unit can have multiple tables !
+    table 1:
+        host Unit ID
+        drones {   }
+        reload
+    table 2:
+        host Unit ID
+        drones {   }
+        reload
+    table 3:
+        etc
+        
+]]
+
+--alternate data structure 2:
+
+--[[
+drone_defs:
+    --below, one unit can have multiple tables !
+    table 1:
+        host Unit Def ID
+        drone Unit Def ID
+        reloadTime
+        maxDrones
+        spawnSize
+        --range --probably won't use
+        managed (boolean)
+        
+        drones = {   } --gets used when a carriertable is instantiated
+        reload = nil   --gets used when a carriertable is instantiated
+        hostUnitID = nil   --gets used when a carriertable is instantiated
+        
+    table 2:
+        host Unit Def ID
+        drone Unit Def ID
+        reloadTime
+        maxDrones
+        spawnSize
+        --range --probably won't use
+        managed (boolean)
+        
+        drones = {   } --gets used when a carriertable is instantiated
+        reload         --gets used when a carriertable is instantiated
+        hostUnitID = nil   --gets used when a carriertable is instantiated
+        
+    table 3:
+        etc
+    
+
+carrierData:
+    looks just like the above ^ ^ ^
+    --new carrier unit? copy all relevant tables from above
+    --carrier unit died? delete all relevant tables
 ]]
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -166,16 +207,23 @@ local carrierList = {}
 ---------------------------------------------------------------------------------
 
 
-
 function gadget:Initialize()
-	Spring.Echo(table.tostring(carrierDefs))
+    Spring.Echo(table.tostring(carrierDefs))
 end
 
+
+
+
+
+
+
+
+--[[
 local function InitCarrier(unitDefID, unitAllyID)
     local carrierData = carrierDefs[unitDefID]
     returnme={}
     for i,v in pairs(carrierData) do
-		returnme[i]={unitDefID = unitDefID, unitAllyID = unitAllyID, droneCount = 0, reload = carrierData.reloadTime, drones = {}, }
+        returnme[i]={unitDefID = unitDefID, unitAllyID = unitAllyID, droneCount = 0, reload = carrierData.reloadTime, drones = {}, }
     end
     --Spring.Echo(table.tostring(returnme))
     return returnme
@@ -188,7 +236,7 @@ function gadget:UnitFinished(unitID, unitDefID, unitTeam)
     carrierList[unitID] = InitCarrier(unitDefID, unitTeam)
   end
 end
-
+]]
 
 
 
@@ -289,13 +337,13 @@ end
 
 --function gadget:AllowCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions)
   ----[[for i,v in pairs(carrierList) do
-	----Spring.Echo(carrierList[i].managed)
-	--if(carrierList[i].managed==true) then --if we find the unit in here, return false
-		----Spring.Echo(carrierList[i].managed)
-		--if(carrierList[i].drones[unitID]==true) then
-			--return false
-		--end
-	--end
+    ----Spring.Echo(carrierList[i].managed)
+    --if(carrierList[i].managed==true) then --if we find the unit in here, return false
+        ----Spring.Echo(carrierList[i].managed)
+        --if(carrierList[i].drones[unitID]==true) then
+            --return false
+        --end
+    --end
   --end]]
   --return true --modified it so that it will allow drones to be controlled by other scripts
 --end
@@ -303,8 +351,8 @@ end
 
 --function gadget:UnitCommand(unitID, unitDefID, teamID, cmdID, cmdParams, cmdOptions)
         --if (carrierList[unitID]) then
-			--if (carrierList[unitID].managed) then
-				--UpdateCarrierTarget(unitID)
+            --if (carrierList[unitID].managed) then
+                --UpdateCarrierTarget(unitID)
             --end
         --end
 --end
@@ -329,15 +377,15 @@ end
   --end
   --if ((n % DEFAULT_UPDATE_ORDER_FREQUENCY) < 0.1) then
         --for i,_ in pairs(carrierList) do
-			--if (carrierList[i].managed==true) then
-				--UpdateCarrierTarget(i)
-			--end
+            --if (carrierList[i].managed==true) then
+                --UpdateCarrierTarget(i)
+            --end
         --end
   --end
 --end
 
 --function UpdateCarrierTarget(carrierID)
-		----Spring.Echo("updating carrier target!")
+        ----Spring.Echo("updating carrier target!")
         --local cQueueC = GetCommandQueue(carrierID, 1)
         --if cQueueC and cQueueC[1] and cQueueC[1].id == CMD_ATTACK then
                 --local ox,oy,oz = GetUnitPosition(carrierID)
