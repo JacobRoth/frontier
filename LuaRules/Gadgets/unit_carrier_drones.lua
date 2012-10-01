@@ -208,9 +208,26 @@ local carrierList = {}
 
 
 function gadget:Initialize()
-    Spring.Echo(table.tostring(carrierDefs))
+	--Spring.Echo("Hello World!")
+    --Spring.Echo(table.tostring(carrierDefs))
 end
 
+function gadget:UnitFinished(unitID, unitDefID, unitTeam)
+	--Spring.Echo("unit finished!")
+	for i,v in pairs(carrierDefs) do
+		if(v.hostUnitDefID == unitDefID) then --found a match
+			table.insert(carrierList,{hostUnitDefID = v.hostUnitDefID, droneUnitDefID=v.droneUnitDefID, reloadTime=v.reloadTime, maxDrones = v.maxDrones, spawnSize=v.spawnSize, managed=v.managed, hostUnitID = unitID, drones = {  }, reload = 0})
+		end
+	end
+end
+
+function gadget:GameFrame(n)
+	--debug vvv
+	--Spring.Echo(table.tostring(carrierList))
+	--debug ^^^
+end
+
+--TODO: add create new drone function
 
 
 
@@ -237,17 +254,6 @@ function gadget:UnitFinished(unitID, unitDefID, unitTeam)
   end
 end
 ]]
-
-
-
-
-
-
-
-
-
-
-
 
 
 ----------------------------------------------------------------------------------
