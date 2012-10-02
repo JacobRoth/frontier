@@ -221,40 +221,42 @@ function gadget:UnitFinished(unitID, unitDefID, unitTeam)
 	end
 end
 
+--TODO: REMOVE DEAD DRONES FROM THE DRONES{} SUBTABLE using Spring.GetUnitIsDead(unitID) 
+
+function gadget:UnitDestroyed(unitID, unitDefID, unitTeam)
+	for i,v in pairs(carrierList) do
+		if(v.hostUnitID == unitID) then--this table slated for destruction
+			for ii,vv in pairs(v.drones) do --first kill all the drones
+				AddUnitDamage(vv,100000)
+			end
+			table.remove(carrierList,i)
+		end
+	end
+end
+
 function gadget:GameFrame(n)
 	--debug vvv
-	--Spring.Echo(table.tostring(carrierList))
+	Spring.Echo(table.tostring(carrierList))
 	--debug ^^^
-end
-
---TODO: add create new drone function
-
-
-
-
-
-
-
---[[
-local function InitCarrier(unitDefID, unitAllyID)
-    local carrierData = carrierDefs[unitDefID]
-    returnme={}
-    for i,v in pairs(carrierData) do
-        returnme[i]={unitDefID = unitDefID, unitAllyID = unitAllyID, droneCount = 0, reload = carrierData.reloadTime, drones = {}, }
-    end
-    --Spring.Echo(table.tostring(returnme))
-    return returnme
+	if(n%100 == 0) then
+		--debug vvv
+		makeNewDrone(carrierList[1])
+		--debug ^^^
+	end
 end
 
 
-function gadget:UnitFinished(unitID, unitDefID, unitTeam)
-  --Spring.Echo("unit finished!")
-  if (carrierDefs[unitDefID]) then
-    carrierList[unitID] = InitCarrier(unitDefID, unitTeam)
-  end
+function makeNewDrone(carrierTable) --simply creates the drone. 
+    --DOES NOT TOUCH RELOAD, MAXDRONES, OR OTHER PROPERTIES OF CARRIERTABLE. edit those elsewhere or add them here.
+	local x, y, z = GetUnitPosition(carrierTable.hostUnitID)
+	local angle = math.rad(random(1,360))
+	local xS = (x + (math.sin(angle) * 20))
+	local zS = (z + (math.cos(angle) * 20))
+	local thisDrone = CreateUnit(carrierTable.droneUnitDefID,x,y,z,1,Spring.GetUnitTeam(carrierTable.hostUnitID))
+	SetUnitPosition(thisDrone, xS, zS, true)
+	SetUnitNoSelect(droneID,true)
+	table.insert(carrierTable.drones,thisDrone)
 end
-]]
-
 
 ----------------------------------------------------------------------------------
 
