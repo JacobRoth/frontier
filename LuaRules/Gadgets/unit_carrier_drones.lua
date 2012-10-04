@@ -200,6 +200,7 @@ function table.tostring( tbl )
 end
 ---------------------------------------------------------------------------------
 local carrierList = {}
+local UPDATE_FREQUENCY = 100
 --local droneList = {}
 
 --reminder - here's how to get a unit's Def: local udID =Spring.GetUnitDefID(unitID)
@@ -236,13 +237,23 @@ end
 
 function gadget:GameFrame(n)
 	--debug vvv
-	Spring.Echo(table.tostring(carrierList))
+	--Spring.Echo(table.tostring(carrierList))
 	--debug ^^^
-	if(n%100 == 0) then
+	if(n%UPDATE_FREQUENCY == 0) then
 		--debug vvv
 		makeNewDrone(carrierList[1])
+		--copyHostOrdersToDrone(carrierList[1])
 		--debug ^^^
+		
 	end
+end
+
+function copyHostOrdersToDrone(carrierTable)
+	Spring.GiveOrderToUnitArray(carrierTable.drones, CMD.STOP, {}, {}) -- flush the queue
+	for i,com in Spring.GetCommandQueue(carrierTable.hostUnitID) do
+		Spring.GiveOrderToUnitArray(carrierTable.drones, com.id, com.params, com.options)
+	end
+	--Spring.Echo(table.tostring(Spring.GetCommandQueue(carrierTable.hostUnitID)))
 end
 
 
@@ -254,7 +265,7 @@ function makeNewDrone(carrierTable) --simply creates the drone.
 	local zS = (z + (math.cos(angle) * 20))
 	local thisDrone = CreateUnit(carrierTable.droneUnitDefID,x,y,z,1,Spring.GetUnitTeam(carrierTable.hostUnitID))
 	SetUnitPosition(thisDrone, xS, zS, true)
-	SetUnitNoSelect(droneID,true)
+	SetUnitNoSelect(thisDrone,true)
 	table.insert(carrierTable.drones,thisDrone)
 end
 
