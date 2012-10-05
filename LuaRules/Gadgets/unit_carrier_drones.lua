@@ -242,7 +242,7 @@ function gadget:GameFrame(n)
 	if(n%UPDATE_FREQUENCY == 0) then
 		--debug vvv
 		makeNewDrone(carrierList[1])
-		--copyHostOrdersToDrone(carrierList[1])
+		copyHostOrdersToDrone(carrierList[1])
 		--debug ^^^
 		
 	end
@@ -250,8 +250,10 @@ end
 
 function copyHostOrdersToDrone(carrierTable)
 	Spring.GiveOrderToUnitArray(carrierTable.drones, CMD.STOP, {}, {}) -- flush the queue
-	for i,com in Spring.GetCommandQueue(carrierTable.hostUnitID) do
+	
+	for i,com in pairs(Spring.GetCommandQueue(carrierTable.hostUnitID)) do
 		Spring.GiveOrderToUnitArray(carrierTable.drones, com.id, com.params, com.options)
+		--Spring.Echo(table.tostring(com))
 	end
 	--Spring.Echo(table.tostring(Spring.GetCommandQueue(carrierTable.hostUnitID)))
 end
