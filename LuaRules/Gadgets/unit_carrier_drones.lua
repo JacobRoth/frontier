@@ -249,13 +249,14 @@ function gadget:GameFrame(n)
 end
 
 function copyHostOrdersToDrone(carrierTable)
-	Spring.GiveOrderToUnitArray(carrierTable.drones, CMD.STOP, {}, {}) -- flush the queue
-	
-	for i,com in pairs(Spring.GetCommandQueue(carrierTable.hostUnitID)) do
-		Spring.GiveOrderToUnitArray(carrierTable.drones, com.id, com.params, com.options)
-		--Spring.Echo(table.tostring(com))
+	if(carrierTable.managed == true) then
+		Spring.GiveOrderToUnitArray(carrierTable.drones, CMD.STOP, {}, {}) -- flush the queue
+		for i,com in pairs(Spring.GetCommandQueue(carrierTable.hostUnitID)) do
+			Spring.GiveOrderToUnitArray(carrierTable.drones, com.id, com.params, com.options)
+			--Spring.Echo(table.tostring(com))
+		end
+		--Spring.Echo(table.tostring(Spring.GetCommandQueue(carrierTable.hostUnitID)))
 	end
-	--Spring.Echo(table.tostring(Spring.GetCommandQueue(carrierTable.hostUnitID)))
 end
 
 
