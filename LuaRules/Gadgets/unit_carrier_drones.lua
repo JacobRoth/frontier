@@ -200,7 +200,7 @@ function table.tostring( tbl )
 end
 ---------------------------------------------------------------------------------
 local carrierList = {}
-local UPDATE_FREQUENCY = 100
+local UPDATE_FREQUENCY = 50
 --local droneList = {}
 
 --reminder - here's how to get a unit's Def: local udID =Spring.GetUnitDefID(unitID)
@@ -241,10 +241,32 @@ function gadget:GameFrame(n)
 	--debug ^^^
 	if(n%UPDATE_FREQUENCY == 0) then
 		--debug vvv
-		makeNewDrone(carrierList[1])
-		copyHostOrdersToDrone(carrierList[1])
+		--makeNewDrone(carrierList[1])
+		--copyHostOrdersToDrone(carrierList[1])
 		--debug ^^^
+		for i,thisTable in pairs(carrierList) do
+			copyHostOrdersToDrone(thisTable)
+			purgeDeadDrones(thisTable) --remove them from the roll if they can't prove they're alive.
+										  --it's like voter supression for drones!
+			
+			
+			--debug vvv
+			Spring.Echo(#thisTable.drones)
+			--debug ^^^
+			
+			--debug vvv
+			if(n%1000) then makeNewDrone(thisTable) end
+			--debug ^^^
+		end
 		
+	end
+end
+
+function purgeDeadDrones(carrierTable)
+	for index,thisUnitID in pairs(carrierTable.drones) do
+		if(Spring.GetUnitIsDead(thisUnitID)) then
+			table.remove(carrierTable,index)
+		end
 	end
 end
 
