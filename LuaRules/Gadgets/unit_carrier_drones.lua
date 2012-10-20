@@ -251,7 +251,7 @@ function gadget:GameFrame(n)
             
             
             --debug vvv
-            Spring.Echo(#thisTable.drones)
+            --Spring.Echo(#thisTable.drones)
             --debug ^^^
             
             --debug vvv
