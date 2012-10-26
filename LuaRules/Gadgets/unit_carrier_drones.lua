@@ -217,7 +217,8 @@ function gadget:UnitFinished(unitID, unitDefID, unitTeam)
     --Spring.Echo("unit finished!")
     for i,v in pairs(carrierDefs) do
         if(v.hostUnitDefID == unitDefID) then --found a match
-            table.insert(carrierList,{hostUnitDefID = v.hostUnitDefID, droneUnitDefID=v.droneUnitDefID, reloadTime=v.reloadTime, maxDrones = v.maxDrones, managed=v.managed, hostUnitID = unitID, drones = {  }, reload = 0})
+            table.insert(carrierList,{hostUnitDefID = v.hostUnitDefID, droneUnitDefID=v.droneUnitDefID, reloadTime=v.reloadTime, maxDrones = v.maxDrones, managed=v.managed, hostUnitID = unitID, drones = {  }, lastReloadFrame = 0})
+            --lastReloadFrame is, well, the last game frame it was reloaded
         end
     end
 end
@@ -227,7 +228,7 @@ end
 function gadget:UnitDestroyed(unitID, unitDefID, unitTeam)
     for i,v in pairs(carrierList) do
         if(v.hostUnitID == unitID) then--this table slated for destruction
-            for ii,vv in pairs(v.drones) do --first kill all the drones
+            for ii,vv in pairs(v.drones) do --first thing we do, let's kill all the lawyers^W drones
                 AddUnitDamage(vv,10000)
             end
             table.remove(carrierList,i)
@@ -248,6 +249,8 @@ function gadget:GameFrame(n)
             copyHostOrdersToDroneIfManaged(thisTable)
             purgeDeadDrones(thisTable) --remove them from the roll if they can't prove they're alive.
                                           --it's like voter supression for drones!
+            checkAndGenerateDrones(thisTable,n) --we must pass n (the current frame) to the function for reloading purposes
+                                          
             
             
             --debug vvv
@@ -296,11 +299,14 @@ function makeNewDrone(carrierTable) --simply creates the drone.
     table.insert(carrierTable.drones,thisDrone)
 end
 
-function checkAndGenerateDrones(carrierTable)
+function checkAndGenerateDrones(carrierTable,currentGameFrame)
 	if(#carrierTable.drones >= carrierTable.maxDrones) then -- no more drones, please
 		return --end function
 	else
-		--todo - add code here
+		if(currentGameFrame-carrierTable.lastReloadFrame>carrierTable.reloadTime) then--add another drone!
+			makeNewDrone(carrierTable)
+			carrierTable.lastReloadFrame=currentGameFrame
+		end
 	end
 end
 

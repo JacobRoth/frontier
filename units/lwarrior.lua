@@ -1,7 +1,7 @@
 local lwarrior = {
     name                = [[Warrior Drone]],
     description         = [[Fires a powerful beam of Anti-Unit plasma. Can Burrow.]],
-    acceleration        = 1,
+    acceleration        = 4,
     brakerate           = 0.1,
     buildpic            = [[lwarrior.png]],
     buildCostEnergy     = 300,
@@ -59,7 +59,7 @@ local lwarrior = {
 
     smoothAnim          = true,
     turnInPlace         = 1,
-    turnRate            = 1000,
+    turnRate            = 4000,
     script              = "lwarrior.lua",
 
     weapons             = {
