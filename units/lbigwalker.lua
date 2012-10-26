@@ -36,8 +36,8 @@ local lbigwalker = {
     
     energyMake          = 30,
     explodeAs           = [[DRONE_GROUND_UNIT]],
-    footprintx          = 14,
-    footprintZ          = 14,
+    footprintx          = 11,
+    footprintZ          = 11,
     idleAutoHeal        = 1,
     leaveTracks         = false,
     mass                = 800,
