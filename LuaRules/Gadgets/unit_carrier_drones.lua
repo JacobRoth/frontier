@@ -217,7 +217,7 @@ function gadget:UnitFinished(unitID, unitDefID, unitTeam)
     --Spring.Echo("unit finished!")
     for i,v in pairs(carrierDefs) do
         if(v.hostUnitDefID == unitDefID) then --found a match
-            table.insert(carrierList,{hostUnitDefID = v.hostUnitDefID, droneUnitDefID=v.droneUnitDefID, reloadTime=v.reloadTime, maxDrones = v.maxDrones, spawnSize=v.spawnSize, managed=v.managed, hostUnitID = unitID, drones = {  }, reload = 0})
+            table.insert(carrierList,{hostUnitDefID = v.hostUnitDefID, droneUnitDefID=v.droneUnitDefID, reloadTime=v.reloadTime, maxDrones = v.maxDrones, managed=v.managed, hostUnitID = unitID, drones = {  }, reload = 0})
         end
     end
 end
@@ -245,7 +245,7 @@ function gadget:GameFrame(n)
         --copyHostOrdersToDrone(carrierList[1])
         --debug ^^^
         for i,thisTable in pairs(carrierList) do
-            copyHostOrdersToDrone(thisTable)
+            copyHostOrdersToDroneIfManaged(thisTable)
             purgeDeadDrones(thisTable) --remove them from the roll if they can't prove they're alive.
                                           --it's like voter supression for drones!
             
@@ -255,7 +255,7 @@ function gadget:GameFrame(n)
             --debug ^^^
             
             --debug vvv
-            if(n%1000) then makeNewDrone(thisTable) end
+            --if(n%2000) then makeNewDrone(thisTable) end
             --debug ^^^
         end
         
@@ -272,7 +272,7 @@ function purgeDeadDrones(carrierTable)
     end
 end
 
-function copyHostOrdersToDrone(carrierTable)
+function copyHostOrdersToDroneIfManaged(carrierTable)
     if(carrierTable.managed == true) then
         Spring.GiveOrderToUnitArray(carrierTable.drones, CMD.STOP, {}, {}) -- flush the queue
         for i,com in pairs(Spring.GetCommandQueue(carrierTable.hostUnitID)) do
@@ -294,6 +294,14 @@ function makeNewDrone(carrierTable) --simply creates the drone.
     SetUnitPosition(thisDrone, xS, zS, true)
     SetUnitNoSelect(thisDrone,true)
     table.insert(carrierTable.drones,thisDrone)
+end
+
+function checkAndGenerateDrones(carrierTable)
+	if(#carrierTable.drones >= carrierTable.maxDrones) then -- no more drones, please
+		return --end function
+	else
+		--todo - add code here
+	end
 end
 
 ----------------------------------------------------------------------------------
